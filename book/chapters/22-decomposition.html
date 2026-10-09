@@ -7,6 +7,10 @@
 
 
         <!-- Custom HTML head -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        
         <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
           tex2jax: {
@@ -24,8 +28,8 @@
         <link rel="icon" href="../favicon-de23e50b.svg">
         <link rel="shortcut icon" href="../favicon-8114d1fc.png">
         <link rel="stylesheet" href="../css/variables-8adf115d.css">
-        <link rel="stylesheet" href="../css/general-2459343d.css">
-        <link rel="stylesheet" href="../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
         <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
@@ -37,7 +41,7 @@
         <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="../src/theme/custom-430b9260.css">
+        <link rel="stylesheet" href="../src/theme/custom-f9325651.css">
 
         <!-- MathJax -->
         <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -47,10 +51,10 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-1e4d1623.js";
+            window.path_to_searchindex_js = "../searchindex-196f8323.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc-e37baa1b.js"></script>
+        <script src="../toc-4d2607a6.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -201,13 +205,13 @@
 <p>بیایید مستقیم وارد بحث شویم و یک تابع خاص را بررسی کنیم. این تابع دو ویژگی را به‌عنوان ورودی می‌گیرد و یک خروجی یک‌بُعدی تولید می‌کند:</p>
 <p>$$f(x_1, x_2) = x_1 \cdot e^{x_1} - x_2 + x_1 \cdot x_2$$</p>
 <p>این تابع را مانند یک مدل یادگیری ماشین تصور کنید. می‌توانیم آن را با یک نمودار سه‌بُعدی یا یک نقشه حرارتی با خطوط تراز مانند شکل ۲۲.۱ نمایش دهیم.</p>
-<p><img src="images/fig-decomp-example-1.png" alt="شکل ۲۲.۱: سطح پیش‌بینی یک تابع با دو ویژگی $X_1$ و $X_2$. هر چه رنگ روشن‌تر باشد، مقدار پیش‌بینی بزرگ‌تر است."></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/fig-decomp-example-1.png" alt="شکل ۲۲.۱: سطح پیش‌بینی یک تابع با دو ویژگی $X_1$ و $X_2$. هر چه رنگ روشن‌تر باشد، مقدار پیش‌بینی بزرگ‌تر است."><span class="img-wrapper"><img src="images/fig-decomp-example-1.png" alt="شکل ۲۲.۱: سطح پیش‌بینی یک تابع با دو ویژگی $X_1$ و $X_2$. هر چه رنگ روشن‌تر باشد، مقدار پیش‌بینی بزرگ‌تر است."></span></label></p>
 <p>تابع زمانی مقادیر بزرگ می‌گیرد که $x_1$ بزرگ و $x_2$ کوچک باشد، و زمانی مقادیر کوچک می‌گیرد که $x_2$ بزرگ و $x_1$ کوچک باشد. تابع پیش‌بینی صرفاً یک اثر جمعی ساده بین دو ویژگی نیست، بلکه یک تعامل (interaction) بین آن‌هاست. این تعامل در نمودار نیز مشهود است — اثر تغییر مقادیر ویژگی $x_1$ به مقداری که ویژگی $x_2$ دارد بستگی دارد.</p>
 <p>وظیفه ما اکنون این است که این تابع را به اثرات اصلی ویژگی‌های $x_1$ و $x_2$ و یک جمله تعاملی تجزیه کنیم. برای یک تابع دوبُعدی $f$ که تنها به دو ویژگی ورودی وابسته است — $f(x_1, x_2)$ — می‌خواهیم هر مؤلفه نماینده یک اثر اصلی ($f_1$ و $f_2$)، یک تعامل ($f_{12}$)، یا یک عرض از مبدأ ($f_0$) باشد:</p>
 <p>$$f(x_1, x_2) = f_0 + f_1(x_1) + f_2(x_2) + f_{12}(x_1, x_2)$$</p>
 <p>اثرات اصلی نشان می‌دهند که هر ویژگی چگونه پیش‌بینی را تحت‌تأثیر قرار می‌دهد، مستقل از مقادیر ویژگی دیگر. اثر تعاملی نشان‌دهنده اثر مشترک ویژگی‌هاست. عرض از مبدأ یک مقدار ثابت است که بخشی از تمام پیش‌بینی‌ها محسوب می‌شود؛ اگر همه مقادیر ویژگی‌ها صفر بودند، پیش‌بینی تنها از عرض از مبدأ تشکیل می‌شد. توجه داشته باشید که مؤلفه‌ها (به‌جز عرض از مبدأ) خود توابعی با بُعدهای ورودی متفاوت هستند.</p>
 <p>فعلاً مؤلفه‌ها را مستقیم ارائه می‌کنم و بعداً توضیح می‌دهم که از کجا می‌آیند. عرض از مبدأ برابر است با $f_0 = 1.59$. از آنجا که سایر مؤلفه‌ها توابع هستند، می‌توان آن‌ها را در شکل ۲۲.۲ تجسم کرد.</p>
-<p><img src="images/fig-decomp-example-continued-1.png" alt="شکل ۲۲.۲: تجزیه یک تابع دوبُعدی به اثرات اصلی و تعامل. ردیف بالا: اثرات اصلی $f_1(x_1)$ (چپ) و $f_2(x_2)$ (راست). پایین: تعامل $f_{12}(x_1, x_2)$ بین $x_1$ و $x_2$."></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/fig-decomp-example-continued-1.png" alt="شکل ۲۲.۲: تجزیه یک تابع دوبُعدی به اثرات اصلی و تعامل. ردیف بالا: اثرات اصلی $f_1(x_1)$ (چپ) و $f_2(x_2)$ (راست). پایین: تعامل $f_{12}(x_1, x_2)$ بین $x_1$ و $x_2$."><span class="img-wrapper"><img src="images/fig-decomp-example-continued-1.png" alt="شکل ۲۲.۲: تجزیه یک تابع دوبُعدی به اثرات اصلی و تعامل. ردیف بالا: اثرات اصلی $f_1(x_1)$ (چپ) و $f_2(x_2)$ (راست). پایین: تعامل $f_{12}(x_1, x_2)$ بین $x_1$ و $x_2$."></span></label></p>
 <p>آیا این مؤلفه‌ها با فرمول اصلی بالا منطقی به نظر می‌رسند — البته با چشم‌پوشی از اینکه مقدار عرض از مبدأ کمی تصادفی به نظر می‌رسد؟ ویژگی $x_1$ یک اثر اصلی نمایی دارد و $x_2$ یک اثر خطی منفی. جمله تعاملی شبیه تراشه پرینگلز به نظر می‌رسد؛ یا به زبان کمتر خوراکی و ریاضی‌تر، یک پارابولوئید هذلولی است، که دقیقاً همان چیزی است که از $x_1 \cdot x_2$ انتظار داریم. پیش‌آگاهی: این تجزیه بر پایه نمودارهای اثر محلی انباشته (ALE) صورت گرفته است.</p>
 <p>اما چرا باید به این روش اهمیت داد؟ نگاهی به فرمول پاسخ تجزیه را مستقیم به ما می‌دهد، پس نیازی به روش‌های پیچیده نیست، مگر نه؟ برای ویژگی $x_1$ می‌توانیم تمام جملاتی را که فقط شامل $x_1$ هستند به‌عنوان مؤلفه آن ویژگی در نظر بگیریم: یعنی $x_1 \cdot e^{x_1}$ و $x_2$ برای ویژگی $x_2$. تعامل نیز $x_1 \cdot x_2$ خواهد بود. اگرچه این پاسخ درستی است (تا حد ثابت‌ها)، اما دو مشکل وجود دارد:</p>
 <p><strong>مشکل اول:</strong> اگرچه در این مثال فرمول را در دست داشتیم، در واقعیت تنها مدل‌های یادگیری ماشین با ساختار ساده را می‌توان با چنین فرمول مرتبی بیان کرد.</p>
@@ -327,6 +331,22 @@
         <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
         <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
         <script>
@@ -336,14 +356,14 @@
 
         <script src="../elasticlunr-ef4e11c1.min.js"></script>
         <script src="../mark-09e88c2c.min.js"></script>
-        <script src="../searcher-c2a407aa.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
         <script src="../clipboard-1626706a.min.js"></script>
         <script src="../highlight-abc7f01d.js"></script>
-        <script src="../book-a0b12cfe.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
-        <script src="../src/theme/custom-5f10e7a2.js"></script>
+        <script src="../src/theme/custom-52114988.js"></script>
 
 
 

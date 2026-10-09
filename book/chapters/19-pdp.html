@@ -7,6 +7,10 @@
 
 
         <!-- Custom HTML head -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        
         <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
           tex2jax: {
@@ -24,8 +28,8 @@
         <link rel="icon" href="../favicon-de23e50b.svg">
         <link rel="shortcut icon" href="../favicon-8114d1fc.png">
         <link rel="stylesheet" href="../css/variables-8adf115d.css">
-        <link rel="stylesheet" href="../css/general-2459343d.css">
-        <link rel="stylesheet" href="../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
         <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
@@ -37,7 +41,7 @@
         <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="../src/theme/custom-430b9260.css">
+        <link rel="stylesheet" href="../src/theme/custom-f9325651.css">
 
         <!-- MathJax -->
         <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -47,10 +51,10 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-1e4d1623.js";
+            window.path_to_searchindex_js = "../searchindex-196f8323.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc-e37baa1b.js"></script>
+        <script src="../toc-4d2607a6.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -218,16 +222,16 @@
 <h2 id="مثالها"><a class="header" href="#مثالها">مثال‌ها</a></h2>
 <p>در عمل، مجموعهٔ $S$ معمولاً تنها یک ویژگی دارد، یا حداکثر دو ویژگی؛ چون یک ویژگی نمودار دوبُعدی تولید می‌کند و دو ویژگی نمودار سه‌بُعدی. هر چیزی فراتر از آن به‌خوبی قابل تجسم نیست.</p>
 <p>به مثال رگرسیون باز می‌گردیم؛ همان‌جا که تعداد دوچرخه‌های اجاره‌شده در یک روز مشخص را پیش‌بینی می‌کنیم. ابتدا یک مدل یادگیری ماشین برازش می‌دهیم، سپس وابستگی‌های جزئی را تحلیل می‌کنیم. در اینجا یک Random Forest برای پیش‌بینی تعداد دوچرخه‌ها برازش داده‌ایم و از نمودار وابستگی جزئی برای مصورسازی روابطی که مدل آموخته استفاده کرده‌ایم (شکل ۱۹.۱). اثر ویژگی‌های آب‌وهوایی بر تعداد پیش‌بینی‌شدهٔ دوچرخه‌ها در نمودار زیر نمایش داده شده است. بیشترین تفاوت‌ها در دمای هوا مشاهده می‌شود: هرچه هوا گرم‌تر باشد، دوچرخه‌های بیشتری اجاره می‌شوند. این روند تا ۲۰ درجهٔ سلسیوس صعودی است، سپس صاف می‌شود و حدود ۳۰ درجه کمی کاهش می‌یابد.</p>
-<p><img src="images/fig-pdp-bike-1.png" alt="شکل ۱۹.۱: PDPها برای مدل پیش‌بینی تعداد دوچرخه و ویژگی‌های دما، رطوبت و سرعت باد. علامت‌گذاری روی محور افقی توزیع داده‌ها را نشان می‌دهد."></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/fig-pdp-bike-1.png" alt="شکل ۱۹.۱: PDPها برای مدل پیش‌بینی تعداد دوچرخه و ویژگی‌های دما، رطوبت و سرعت باد. علامت‌گذاری روی محور افقی توزیع داده‌ها را نشان می‌دهد."><span class="img-wrapper"><img src="images/fig-pdp-bike-1.png" alt="شکل ۱۹.۱: PDPها برای مدل پیش‌بینی تعداد دوچرخه و ویژگی‌های دما، رطوبت و سرعت باد. علامت‌گذاری روی محور افقی توزیع داده‌ها را نشان می‌دهد."></span></label></p>
 <p>با افزایش رطوبت بیش از ۶۰٪، تمایل مردم به اجارهٔ دوچرخه کاهش می‌یابد. همچنین، هرچه باد بیشتر بوزد، دوچرخه‌سواران کمتری دیده می‌شوند — که البته منطقی است. نکتهٔ جالب این است که تعداد پیش‌بینی‌شدهٔ اجاره‌ها با افزایش سرعت باد از ۲۵ تا ۳۵ کیلومتر بر ساعت کاهش نمی‌یابد؛ اما داده‌های آموزشی در این بازه اندک هستند و مدل احتمالاً نتوانسته پیش‌بینی معناداری برای این محدوده بیاموزد. از نظر شهودی، انتظار می‌رود تعداد دوچرخه‌ها با افزایش سرعت باد کاهش یابد، به‌ویژه هنگامی که سرعت آن بسیار زیاد باشد.</p>
 <p>برای نمایش نمودار وابستگی جزئی با یک ویژگی طبقه‌ای، اثر ویژگی فصل را بر پیش‌بینی اجارهٔ دوچرخه بررسی می‌کنیم (شکل ۱۹.۲). تمام فصل‌ها اثر مشابهی بر پیش‌بینی‌های مدل دارند؛ تنها در زمستان مدل تعداد اجارهٔ کمتری پیش‌بینی می‌کند و در بهار نیز اندکی کمتر.</p>
-<p><img src="images/fig-pdp-bike-cat-1.png" alt="شکل ۱۹.۲: PDPها برای مدل پیش‌بینی تعداد دوچرخه و ویژگی فصل."></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/fig-pdp-bike-cat-1.png" alt="شکل ۱۹.۲: PDPها برای مدل پیش‌بینی تعداد دوچرخه و ویژگی فصل."><span class="img-wrapper"><img src="images/fig-pdp-bike-cat-1.png" alt="شکل ۱۹.۲: PDPها برای مدل پیش‌بینی تعداد دوچرخه و ویژگی فصل."></span></label></p>
 <p>همچنین وابستگی جزئی را برای دسته‌بندی جنسیت پنگوئن‌ها (نر/ماده) محاسبه می‌کنیم. برای تنوع، هم رویکرد Random Forest و هم رگرسیون لجستیک را تحلیل می‌کنیم. هر دو مدل $P(\text{female})$ را بر اساس اندازه‌گیری‌های بدن پیش‌بینی می‌کنند. وابستگی جزئی احتمال ماده بودن را بر اساس وزن بدن و عمق منقار برای Random Forest محاسبه و مصورسازی می‌کنیم (شکل ۱۹.۳). هرچه پنگوئن سنگین‌تر باشد، احتمال ماده بودنش کمتر است. الگوی مشابهی برای عمق منقار نیز دیده می‌شود. نمودار PDP مربوط به Random Forest به دلیل ماهیت درخت تصمیم، بسیار ناهموارتر است.</p>
-<p><img src="images/fig-pdp-penguin-1.png" alt="شکل ۱۹.۳: PDPها برای عمق منقار و وزن بدن، هم برای مدل رگرسیون لجستیک و هم برای Random Forest."></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/fig-pdp-penguin-1.png" alt="شکل ۱۹.۳: PDPها برای عمق منقار و وزن بدن، هم برای مدل رگرسیون لجستیک و هم برای Random Forest."><span class="img-wrapper"><img src="images/fig-pdp-penguin-1.png" alt="شکل ۱۹.۳: PDPها برای عمق منقار و وزن بدن، هم برای مدل رگرسیون لجستیک و هم برای Random Forest."></span></label></p>
 <p>شکل ۱۹.۳ یک مشکل اساسی دارد: تمام گونه‌های پنگوئن را با هم در نظر می‌گیرد. اما می‌توان PDPها را به‌تفکیک گونه نیز محاسبه کرد. برای این کار کافی است داده‌ها را زیرمجموعه‌سازی کنیم و منحنی‌ها را در یک نمودار رسم کنیم (شکل ۱۹.۴). تفسیری دقیق‌تر پدیدار می‌شود: برای گونهٔ Adelie، افزایش وزن با کاهش احتمال ماده بودن همراه است. برای Chinstrap، وزن تأثیر چندانی بر احتمال ندارد. پنگوئن‌های Gentoo به‌طورکلی سنگین‌تر هستند، اما همان الگوی «نرها سنگین‌ترند» را نیز نشان می‌دهند. همچنین، همان‌طور که انتظار می‌رود، رگرسیون لجستیک منحنی هموارتری دارد و احتمالات Random Forest به سمت میانگین کشیده می‌شوند.</p>
-<p><img src="images/fig-pdp-penguin-by-species-1.png" alt="شکل ۱۹.۴: PDP تقسیم‌شده بر اساس گونهٔ پنگوئن، با مقایسهٔ رگرسیون لجستیک و Random Forest."></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/fig-pdp-penguin-by-species-1.png" alt="شکل ۱۹.۴: PDP تقسیم‌شده بر اساس گونهٔ پنگوئن، با مقایسهٔ رگرسیون لجستیک و Random Forest."><span class="img-wrapper"><img src="images/fig-pdp-penguin-by-species-1.png" alt="شکل ۱۹.۴: PDP تقسیم‌شده بر اساس گونهٔ پنگوئن، با مقایسهٔ رگرسیون لجستیک و Random Forest."></span></label></p>
 <p>می‌توان وابستگی جزئی دو ویژگی را نیز به‌صورت همزمان مصورسازی کرد (شکل ۱۹.۵): اینجا عمق منقار و طول منقار. مدل مورد بررسی Random Forest است. تعاملی میان این دو ویژگی وجود دارد؛ در عمق‌های کم منقار، طول منقار تفاوتی ایجاد نمی‌کند، اما برای منقارهای بلندتر، $P(\text{female})$ کاهش می‌یابد.</p>
-<p><img src="images/fig-pdp-penguins-2d-1.png" alt="شکل ۱۹.۵: PDP برای $P(&#92;text{female})$ و تعامل میان عمق منقار و طول منقار. نقاط سیاه نشان‌دهندهٔ پنگوئن‌های ماده و نقاط خاکستری نشان‌دهندهٔ پنگوئن‌های نر هستند."></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/fig-pdp-penguins-2d-1.png" alt="شکل ۱۹.۵: PDP برای $P(&#92;text{female})$ و تعامل میان عمق منقار و طول منقار. نقاط سیاه نشان‌دهندهٔ پنگوئن‌های ماده و نقاط خاکستری نشان‌دهندهٔ پنگوئن‌های نر هستند."><span class="img-wrapper"><img src="images/fig-pdp-penguins-2d-1.png" alt="شکل ۱۹.۵: PDP برای $P(&#92;text{female})$ و تعامل میان عمق منقار و طول منقار. نقاط سیاه نشان‌دهندهٔ پنگوئن‌های ماده و نقاط خاکستری نشان‌دهندهٔ پنگوئن‌های نر هستند."></span></label></p>
 <blockquote>
 <p><strong>💡 نکته — کاهش تعاملات، بهبود تفسیرپذیری PDP</strong></p>
 <p>اگرچه PDP یک روش مستقل از مدل است، داشتن مدلی با تعاملات کمتر و اثرات همگن‌تر تفسیر PDP را ساده‌تر می‌کند و برخی خطرات سوءتفسیر را کاهش می‌دهد. از جملهٔ این روش‌ها: کاهش عمق درخت هنگام استفاده از روش‌های مبتنی بر درخت، یا افزودن قیدهای یکنواختی. همچنین می‌توان به شیوه‌ای مستقل از مدل، تعاملات کمتر، تُنُکی بیشتر، و اثرات کم‌پیچیدگی‌تر را بهینه کرد، ر.ک. Molnar, Casalicchio, and Bischl (2020).</p>
@@ -288,6 +292,22 @@
         <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
         <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
         <script>
@@ -297,14 +317,14 @@
 
         <script src="../elasticlunr-ef4e11c1.min.js"></script>
         <script src="../mark-09e88c2c.min.js"></script>
-        <script src="../searcher-c2a407aa.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
         <script src="../clipboard-1626706a.min.js"></script>
         <script src="../highlight-abc7f01d.js"></script>
-        <script src="../book-a0b12cfe.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
-        <script src="../src/theme/custom-5f10e7a2.js"></script>
+        <script src="../src/theme/custom-52114988.js"></script>
 
 
 

@@ -243,6 +243,20 @@ body {
   border-radius: 0 6px 6px 0;
 }
 
+/* ─── Translator-added content (توضیح مترجم / برای درک بهتر) ───
+   Marked at runtime by custom.js; always keep translator additions
+   in this blockquote form so they get flagged and colored purple,
+   distinguishing them from the original author's text. */
+.content blockquote.translator-note {
+  background: #F5F0FA;
+  border-right: 4px solid #7C3AED;
+  color: #5B21B6;
+}
+
+.content blockquote.translator-note strong:first-of-type {
+  color: #6D28D9;
+}
+
 /* ─── Cover page (no ruled lines) ─── */
 body:has(.cover-container) #mdbook-content {
   background-image: none !important;

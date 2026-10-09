@@ -7,6 +7,10 @@
 
 
         <!-- Custom HTML head -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        
         <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
           tex2jax: {
@@ -24,8 +28,8 @@
         <link rel="icon" href="../favicon-de23e50b.svg">
         <link rel="shortcut icon" href="../favicon-8114d1fc.png">
         <link rel="stylesheet" href="../css/variables-8adf115d.css">
-        <link rel="stylesheet" href="../css/general-2459343d.css">
-        <link rel="stylesheet" href="../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
         <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
@@ -37,7 +41,7 @@
         <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="../src/theme/custom-430b9260.css">
+        <link rel="stylesheet" href="../src/theme/custom-f9325651.css">
 
         <!-- MathJax -->
         <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -47,10 +51,10 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-1e4d1623.js";
+            window.path_to_searchindex_js = "../searchindex-196f8323.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc-e37baa1b.js"></script>
+        <script src="../toc-4d2607a6.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -197,7 +201,83 @@
 <p><strong>عنوان اصلی:</strong> Individual Conditional Expectation (ICE)<br><strong>منبع:</strong> <a href="https://christophm.github.io/interpretable-ml-book/ice.html">https://christophm.github.io/interpretable-ml-book/ice.html</a><br><strong>نویسنده:</strong> Christoph Molnar<br><strong>مترجم:</strong> مریم محمودی</p>
 </blockquote>
 <hr>
-<p><em>این فصل هنوز ترجمه نشده است.</em></p>
+<p>نمودارهای انتظار شرطی فردی (Individual Conditional Expectation یا ICE) یک خط برای هر نمونه نشان می‌دهند که مشخص می‌کند پیش‌بینی آن نمونه هنگام تغییر یک ویژگی چگونه تغییر می‌کند.</p>
+<p>یک نمودار ICE (<a href="appendix-D-references.html">Goldstein و همکاران، ۲۰۱۵</a>) وابستگی پیش‌بینی به یک ویژگی را برای <em>هر</em> نمونه به‌طور جداگانه به تصویر می‌کشد، به‌طوری‌که برای هر نمونهٔ مجموعه داده یک خط به دست می‌آید.
+مقادیر یک خط (و یک نمونه) را می‌توان با ثابت نگه‌داشتن همهٔ ویژگی‌های دیگر، ساختن نسخه‌های جدیدی از این نمونه با جایگزینی مقدار آن ویژگی با مقادیری از یک شبکه، و گرفتن پیش‌بینی از مدل جعبه‌سیاه برای این نمونه‌های تازه‌ساخته‌شده، محاسبه کرد.
+نتیجه، مجموعه‌ای از نقاط برای یک نمونه است که شامل مقدار ویژگی از شبکه و پیش‌بینی متناظر آن است.
+به‌عبارت دیگر، نمودارهای ICE همهٔ <a href="#ceteris-paribus">منحنی‌های Ceteris Paribus</a> یک مجموعه داده را در یک نمودار واحد نشان می‌دهند.</p>
+<h2 id="مثالها"><a class="header" href="#مثالها">مثال‌ها</a></h2>
+<p>شکل ۱۳.۱ نمودارهای ICE را برای <a href="#bike-data">پیش‌بینی اجارهٔ دوچرخه</a> نشان می‌دهد.
+مدل پیش‌بینی زیربنایی یک جنگل تصادفی است.
+به نظر می‌رسد همهٔ منحنی‌ها روندی مشابه دارند، بنابراین تعامل آشکاری وجود ندارد.</p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://christophm.github.io/interpretable-ml-book/ice_files/figure-html/fig-ice-bike-1.png" alt="نمودارهای ICE پیش‌بینی اجارهٔ دوچرخه بر اساس دما، رطوبت و سرعت باد."><span class="img-wrapper"><img src="https://christophm.github.io/interpretable-ml-book/ice_files/figure-html/fig-ice-bike-1.png" alt="نمودارهای ICE پیش‌بینی اجارهٔ دوچرخه بر اساس دما، رطوبت و سرعت باد."></span></label></p>
+<p><em>شکل ۱۳.۱: نمودارهای ICE پیش‌بینی اجارهٔ دوچرخه بر اساس دما، رطوبت و سرعت باد.</em></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://christophm.github.io/interpretable-ml-book/ice_files/figure-html/fig-ice-bike-colored-1.png" alt="منحنی‌های ICE برای جنگل تصادفی پیش‌بینی‌کنندهٔ اجارهٔ دوچرخه. خطوط بر اساس فصل رنگ‌آمیزی شده‌اند. بالای نمودارهای ICE، نمودارهای جعبه‌ای توزیع رطوبت به تفکیک فصل را نشان می‌دهند."><span class="img-wrapper"><img src="https://christophm.github.io/interpretable-ml-book/ice_files/figure-html/fig-ice-bike-colored-1.png" alt="منحنی‌های ICE برای جنگل تصادفی پیش‌بینی‌کنندهٔ اجارهٔ دوچرخه. خطوط بر اساس فصل رنگ‌آمیزی شده‌اند. بالای نمودارهای ICE، نمودارهای جعبه‌ای توزیع رطوبت به تفکیک فصل را نشان می‌دهند."></span></label></p>
+<p><em>شکل ۱۳.۲: منحنی‌های ICE برای جنگل تصادفی پیش‌بینی‌کنندهٔ اجارهٔ دوچرخه. خطوط بر اساس فصل رنگ‌آمیزی شده‌اند. بالای نمودارهای ICE، نمودارهای جعبه‌ای توزیع رطوبت به تفکیک فصل را نشان می‌دهند.</em></p>
+<p>اما می‌توانیم با تغییردادن نمودار ICE، تعامل‌های احتمالی را نیز بررسی کنیم.
+شکل ۱۳.۲ دوباره نمودار ICE رطوبت را نشان می‌دهد، با این تفاوت که این بار خطوط بر اساس فصل رنگ‌آمیزی شده‌اند.
+این نمودار چند نکته را نشان می‌دهد:
+اول – که جای تعجب ندارد – فصل‌های مختلف «عرض از مبدأ» متفاوتی دارند.
+یعنی، برای مثال، روزهای زمستان پیش‌بینی کمتری دارند و تابستان بیشترین پیش‌بینی را، مستقل از رطوبت.
+اما شکل ۱۳.۲ همچنین نشان می‌دهد که اثر رطوبت برای فصل‌های مختلف متفاوت است:
+در زمستان، افزایش رطوبت فقط به‌طور جزئی تعداد پیش‌بینی‌شدهٔ اجارهٔ دوچرخه را کاهش می‌دهد.
+برای تابستان، اجارهٔ پیش‌بینی‌شدهٔ دوچرخه بین رطوبت نسبی ۲۰٪ تا ۶۰٪ تقریباً ثابت می‌ماند و بالاتر از ۶۰٪ به‌طور قابل توجهی افت می‌کند.
+اثرات رطوبت برای بهار و پاییز به نظر می‌رسد ترکیبی از «ثبات زمستان» و «افت تابستان» باشند.
+با این حال، همان‌طور که نمودارهای جعبه‌ای در شکل ۱۳.۲ نشان می‌دهند، نباید اثرات رطوبت بسیار پایین را برای تابستان و پاییز بیش از حد تفسیر کنیم.</p>
+<blockquote>
+<p><strong>از شفافیت و رنگ استفاده کنید</strong></p>
+<p>اگر خطوط در یک نمودار به‌شدت روی هم قرار می‌گیرند، می‌توانید آن‌ها را کمی شفاف کنید.
+اگر این کار کمکی نکرد، شاید بهتر باشد سراغ <a href="#pdp">نمودار وابستگی جزئی</a> بروید.
+با رنگ‌آمیزی خطوط بر اساس مقدار یک ویژگی دیگر، می‌توانید تعامل‌ها را بررسی کنید.</p>
+</blockquote>
+<p>بیایید به <a href="#penguins">وظیفهٔ دسته‌بندی پنگوئن‌ها</a> برگردیم و ببینیم پیش‌بینی هر نمونه چگونه با ویژگی <code>bill_length_mm</code> (طول منقار) مرتبط است.
+جنگل تصادفی‌ای را تحلیل می‌کنیم که احتمال مادگی یک پنگوئن را بر اساس اندازه‌گیری‌های بدنی پیش‌بینی می‌کند.
+شکل ۱۳.۳ یک نمودار ICE نسبتاً زشت است.
+اما گاهی واقعیت همین است.
+دلیل آن این است که مدل برای اکثر پنگوئن‌ها نسبتاً مطمئن است و بین ۰ و ۱ می‌پرد.</p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://christophm.github.io/interpretable-ml-book/ice_files/figure-html/fig-ice-penguins-1.png" alt="نمودار ICE احتمال پنگوئن گونهٔ Adelie بر اساس طول منقار. هر خط نشان‌دهندهٔ یک پنگوئن است."><span class="img-wrapper"><img src="https://christophm.github.io/interpretable-ml-book/ice_files/figure-html/fig-ice-penguins-1.png" alt="نمودار ICE احتمال پنگوئن گونهٔ Adelie بر اساس طول منقار. هر خط نشان‌دهندهٔ یک پنگوئن است."></span></label></p>
+<p><em>شکل ۱۳.۳: نمودار ICE احتمال پنگوئن گونهٔ Adelie بر اساس طول منقار. هر خط نشان‌دهندهٔ یک پنگوئن است.</em></p>
+<h2 id="نمودار-ice-مرکزیشده-c-ice"><a class="header" href="#نمودار-ice-مرکزیشده-c-ice">نمودار ICE مرکزی‌شده (c-ICE)</a></h2>
+<p>نمودارهای ICE با یک مشکل روبه‌رو هستند:
+گاهی تشخیص این‌که آیا منحنی‌های ICE به این دلیل بین نقاط داده متفاوت‌اند که از پیش‌بینی‌های متفاوتی شروع می‌شوند، دشوار است.
+یک راه‌حل ساده این است که منحنی‌ها را در یک نقطهٔ مشخص از ویژگی مرکزی‌سازی کنیم و فقط تفاوت پیش‌بینی نسبت به آن نقطه را نمایش دهیم.
+نموداری که از این کار حاصل می‌شود، نمودار ICE مرکزی‌شده (c-ICE) نامیده می‌شود.
+لنگرانداختن منحنی‌ها در انتهای پایینی ویژگی، انتخاب خوبی است.
+هر منحنی این‌گونه تعریف می‌شود:</p>
+<p>$$ICE^{(i)}_j(x_j) = \hat{f}(x_j, \mathbf{x}^{(i)}_{-j}) - \hat{f}(a, \mathbf{x}_{-j}^{(i)})$$</p>
+<p>که در آن $\hat{f}$ مدل برازش‌شده و $a$ نقطهٔ لنگر است.</p>
+<p>بیایید نگاهی به یک نمودار ICE مرکزی‌شده برای دما در پیش‌بینی اجارهٔ دوچرخه بیندازیم:</p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://christophm.github.io/interpretable-ml-book/ice_files/figure-html/ice-bike-centered-1.png" alt="نمودارهای ICE مرکزی‌شدهٔ تعداد پیش‌بینی‌شدهٔ دوچرخه‌ها بر اساس دما. خطوط تفاوت پیش‌بینی را نسبت به پیش‌بینی در حداقل دمای مشاهده‌شده نشان می‌دهند."><span class="img-wrapper"><img src="https://christophm.github.io/interpretable-ml-book/ice_files/figure-html/ice-bike-centered-1.png" alt="نمودارهای ICE مرکزی‌شدهٔ تعداد پیش‌بینی‌شدهٔ دوچرخه‌ها بر اساس دما. خطوط تفاوت پیش‌بینی را نسبت به پیش‌بینی در حداقل دمای مشاهده‌شده نشان می‌دهند."></span></label></p>
+<p><em>شکل ۱۳.۴: نمودارهای ICE مرکزی‌شدهٔ تعداد پیش‌بینی‌شدهٔ دوچرخه‌ها بر اساس دما. خطوط تفاوت پیش‌بینی را نسبت به پیش‌بینی در حداقل دمای مشاهده‌شده نشان می‌دهند.</em></p>
+<p>نمودارهای ICE مرکزی‌شده مقایسهٔ منحنی‌های نمونه‌های مختلف را آسان‌تر می‌کنند.
+این می‌تواند زمانی مفید باشد که نه به‌دنبال تغییر مطلق یک مقدار پیش‌بینی‌شده، بلکه به‌دنبال تفاوت پیش‌بینی نسبت به یک نقطهٔ ثابت از بازهٔ ویژگی باشیم.</p>
+<h2 id="نمودار-ice-مشتقی-d-ice"><a class="header" href="#نمودار-ice-مشتقی-d-ice">نمودار ICE مشتقی (d-ICE)</a></h2>
+<p>راه دیگری که می‌تواند تشخیص بصری ناهمگنی را آسان‌تر کند، نگاه‌کردن به مشتقات فردی تابع پیش‌بینی نسبت به یک ویژگی است.
+نموداری که از این کار حاصل می‌شود، نمودار ICE مشتقی (d-ICE) نامیده می‌شود.
+مشتقات یک تابع (یا منحنی) به شما می‌گویند که آیا تغییری رخ می‌دهد و در چه جهتی رخ می‌دهد.
+با نمودار ICE مشتقی، به‌راحتی می‌توان بازه‌هایی از مقادیر ویژگی را یافت که در آن‌ها پیش‌بینی‌های جعبه‌سیاه برای (دست‌کم برخی) نمونه‌ها تغییر می‌کند.
+اگر بین ویژگی موردبررسی $X_j$ و سایر ویژگی‌ها $X_{-j}$ تعاملی وجود نداشته باشد، آنگاه تابع پیش‌بینی را می‌توان این‌گونه بیان کرد:</p>
+<p>$$\hat{f}(\mathbf{x}) = \hat{f}(x_j, \mathbf{x}_C) = g(x_j) + h(\mathbf{x}_{-j}), \quad\text{with}\quad\frac{\partial \hat{f}(\mathbf{x})}{\partial x_j} = g’(x_j)$$</p>
+<p>بدون تعامل، مشتقات جزئی فردی باید برای همهٔ نمونه‌ها یکسان باشند.
+اگر متفاوت باشند، به‌دلیل وجود تعامل است و در نمودار d-ICE قابل مشاهده می‌شود.
+علاوه بر نمایش منحنی‌های فردی مشتق تابع پیش‌بینی نسبت به ویژگی $j$، نمایش انحراف معیار مشتق نیز کمک می‌کند تا مناطقی از ویژگی $j$ که در آن‌ها ناهمگنی در مشتقات برآوردشده وجود دارد، برجسته شوند.
+محاسبهٔ نمودار ICE مشتقی زمان زیادی می‌برد و از نظر عملی چندان کاربردی نیست.</p>
+<h2 id="نقاط-قوت"><a class="header" href="#نقاط-قوت">نقاط قوت</a></h2>
+<p>منحنی‌های انتظار شرطی فردی <strong>درک‌شان بدیهی و آسان است</strong>.
+هر خط، پیش‌بینی‌های یک نمونه را هنگام تغییر ویژگی موردنظر نشان می‌دهد.</p>
+<p>منحنی‌های ICE می‌توانند <strong>روابط ناهمگن را آشکار کنند</strong>.</p>
+<h2 id="محدودیتها"><a class="header" href="#محدودیتها">محدودیت‌ها</a></h2>
+<p>منحنی‌های ICE <strong>تنها می‌توانند یک ویژگی را به‌طور معنادار نمایش دهند</strong>، چون نمایش دو ویژگی نیازمند رسم چند سطح روی‌هم‌قرارگرفته خواهد بود و در نمودار چیزی قابل مشاهده نخواهد بود.</p>
+<p>منحنی‌های ICE از مشکل همبستگی رنج می‌برند: اگر ویژگی موردنظر با سایر ویژگی‌ها همبسته باشد، <strong>برخی نقاط روی خطوط ممکن است بر اساس توزیع مشترک ویژگی‌ها، نقاط داده نامعتبری باشند</strong>.</p>
+<p>اگر تعداد زیادی منحنی ICE رسم شود، <strong>نمودار می‌تواند شلوغ شود</strong> و چیزی قابل مشاهده نخواهد بود.
+راه‌حل: یا به خطوط کمی شفافیت اضافه کنید یا فقط نمونه‌ای از خطوط را رسم کنید.</p>
+<p>در نمودارهای ICE ممکن است <strong>دیدن میانگین کار آسانی نباشد</strong>.
+این مشکل راه‌حل ساده‌ای دارد:
+منحنی‌های انتظار شرطی فردی را با <a href="#pdp">نمودار وابستگی جزئی</a> ترکیب کنید.</p>
+<h2 id="نرمافزار-و-جایگزینها"><a class="header" href="#نرمافزار-و-جایگزینها">نرم‌افزار و جایگزین‌ها</a></h2>
+<p>نمودارهای ICE در بسته‌های R به نام‌های <code>iml</code> (<a href="appendix-D-references.html">Molnar، Bischl و Casalicchio، ۲۰۱۸</a>) (که برای این مثال‌ها استفاده شده)، <code>ICEbox</code> و <code>pdp</code> پیاده‌سازی شده‌اند.
+بستهٔ دیگر R به نام <code>condvis</code> نیز کاری بسیار مشابه ICE انجام می‌دهد.
+در Python، می‌توانید از <a href="https://selfexplainml.github.io/PiML-Toolbox/_build/html/index.html">PiML</a> (<a href="appendix-D-references.html">Sudjianto و همکاران، ۲۰۲۳</a>) استفاده کنید.</p>
 
                     </main>
 
@@ -234,6 +314,22 @@
         <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
         <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
         <script>
@@ -243,14 +339,14 @@
 
         <script src="../elasticlunr-ef4e11c1.min.js"></script>
         <script src="../mark-09e88c2c.min.js"></script>
-        <script src="../searcher-c2a407aa.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
         <script src="../clipboard-1626706a.min.js"></script>
         <script src="../highlight-abc7f01d.js"></script>
-        <script src="../book-a0b12cfe.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
-        <script src="../src/theme/custom-5f10e7a2.js"></script>
+        <script src="../src/theme/custom-52114988.js"></script>
 
 
 

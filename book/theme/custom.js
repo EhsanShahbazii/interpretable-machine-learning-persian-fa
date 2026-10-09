@@ -84,13 +84,30 @@
     if (avatar) avatar.src = src;
   }
 
+  var TRANSLATOR_MARKERS = ["توضیح مترجم", "برای درک بهتر", "مثال مترجم"];
+
+  function markTranslatorNotes() {
+    var blockquotes = document.querySelectorAll(".content blockquote");
+    blockquotes.forEach(function (bq) {
+      var text = bq.textContent || "";
+      var isTranslatorNote = TRANSLATOR_MARKERS.some(function (marker) {
+        return text.indexOf(marker) !== -1;
+      });
+      if (isTranslatorNote) {
+        bq.classList.add("translator-note");
+      }
+    });
+  }
+
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", function () {
       injectSidebarAvatar();
       setupCoverDrop();
+      markTranslatorNotes();
     });
   } else {
     injectSidebarAvatar();
     setupCoverDrop();
+    markTranslatorNotes();
   }
 })();

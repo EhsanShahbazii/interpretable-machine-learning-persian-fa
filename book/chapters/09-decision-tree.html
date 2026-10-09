@@ -7,6 +7,10 @@
 
 
         <!-- Custom HTML head -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        
         <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
           tex2jax: {
@@ -24,8 +28,8 @@
         <link rel="icon" href="../favicon-de23e50b.svg">
         <link rel="shortcut icon" href="../favicon-8114d1fc.png">
         <link rel="stylesheet" href="../css/variables-8adf115d.css">
-        <link rel="stylesheet" href="../css/general-2459343d.css">
-        <link rel="stylesheet" href="../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
         <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
@@ -37,7 +41,7 @@
         <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="../src/theme/custom-430b9260.css">
+        <link rel="stylesheet" href="../src/theme/custom-f9325651.css">
 
         <!-- MathJax -->
         <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -47,10 +51,10 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-1e4d1623.js";
+            window.path_to_searchindex_js = "../searchindex-196f8323.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc-e37baa1b.js"></script>
+        <script src="../toc-4d2607a6.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -216,14 +220,22 @@
 <li>$\mathbf{1}{\mathbf{x} \in R_m}$ تابع نشانگر است که ۱ می‌شود اگر نمونه $\mathbf{x}$ در ناحیه $R_m$ باشد.</li>
 </ul>
 <p>هر نمونه دقیقاً در یک ناحیه $R_m$ قرار می‌گیرد.</p>
+<blockquote>
+<p><span style="color:#7C3AED"><strong>برای درک بهتر (توضیح مترجم):</strong></span> فرض کنید می‌خواهیم قیمت خانه را با دو ویژگی «متراژ» و «تعداد اتاق» پیش‌بینی کنیم و درخت فقط دو تقسیم دارد. اگر متراژ کمتر از ۸۰ باشد، وارد برگ $R_1$ می‌شویم که میانگین قیمت آن ۱۵۰ میلیون تومان است ($c_1 = 150$)؛ در غیر این صورت به تقسیم بعدی می‌رویم و بسته به تعداد اتاق، وارد $R_2$ ($c_2 = 220$) یا $R_3$ ($c_3 = 300$) می‌شویم. برای خانه‌ای با متراژ ۶۰، تابع نشانگر فقط برای $R_1$ برابر ۱ و برای بقیهٔ نواحی برابر صفر است؛ بنابراین $\hat{f}(\mathbf{x}) = c_1 = 150$. یعنی فرمول بالا صرفاً می‌گوید: «ببین نمونه در کدام برگ افتاده و مقدار همان برگ را برگردان.»</p>
+</blockquote>
 <h3 id="چگونه-تقسیمبندیها-انتخاب-میشوند"><a class="header" href="#چگونه-تقسیمبندیها-انتخاب-میشوند">چگونه تقسیم‌بندی‌ها انتخاب می‌شوند؟</a></h3>
 <p>CART در هر مرحله، تقسیمی را انتخاب می‌کند که معیار زیر را بیشینه کاهش دهد:</p>
 <ul>
 <li><strong>رگرسیون:</strong> واریانس خروجی در هر شاخه.</li>
 <li><strong>دسته‌بندی:</strong> ناخالصی گینی (Gini impurity) یا آنتروپی اطلاعات.</li>
 </ul>
-<p>این فرایند به صورت بازگشتی ادامه می‌یابد تا زمانی که معیار توقف فعال شود — مثلاً وقتی تعداد نمونه‌ها در یک گره به زیر حد مجاز برسد. برای جلوگیری از بیش‌برازش، درخت‌های بزرگ معمولاً <strong>هرس</strong> (pruning) می‌شوند.</p>
-<p><img src="https://christophm.github.io/interpretable-ml-book/tree_files/figure-html/fig-tree-artificial-1.png" alt="شکل ۹.۱"></p>
+<blockquote>
+<p><span style="color:#7C3AED"><strong>مثال مترجم برای درک بهتر خوانندگان:</strong></span> فرض کنید در یک گره ۱۰ نمونه داریم: ۵ تای آن‌ها کلاس «مثبت» و ۵ تای دیگر کلاس «منفی» هستند. ناخالصی گینی این گره برابر است با $1 - (0.5^2 + 0.5^2) = 0.5$، یعنی بیشترین مقدار ممکن (کاملاً ناخالص). حالا اگر با یک تقسیم، گره را به دو زیرگره تبدیل کنیم که در یکی ۴ نمونهٔ «مثبت» و ۱ نمونهٔ «منفی» باشد و در دیگری ۱ نمونهٔ «مثبت» و ۴ نمونهٔ «منفی»، ناخالصی گینی هر زیرگره برابر $1 - (0.8^2 + 0.2^2) = 0.32$ می‌شود که کمتر از ۰٫۵ اولیه است. CART دقیقاً چنین تقسیمی را ترجیح می‌دهد، چون ناخالصی را کاهش می‌دهد و کلاس‌های هر زیرگره را «خالص‌تر» می‌کند.</p>
+</blockquote>
+<p>این فرایند به صورت بازگشتی ادامه می‌یابد تا زمانی که معیار توقف فعال شود — مثلاً وقتی تعداد نمونه‌ها در یک گره پیش از تقسیم، یا تعداد نمونه‌ها در یک گره برگ، به زیر حد مجاز برسد.</p>
+<p>برای ویژگی‌های دسته‌ای، الگوریتم گروه‌بندی‌های مختلف از دسته‌ها را می‌آزماید تا بهترین تقسیم را بیابد. پس از یافتن بهترین نقطهٔ برش برای هر ویژگی، الگوریتم آن ویژگی را انتخاب می‌کند که بهترین تفکیک را از نظر واریانس یا ناخالصی گینی ایجاد کند و این تقسیم را به درخت اضافه می‌کند.</p>
+<p>برای معرفی دقیق‌تر CART، کتاب «The Elements of Statistical Learning» (<a href="https://hastie.su.domains/ElemStatLearn/">Hastie 2009</a>) توصیه می‌شود؛ در این فصل تمرکز اصلی بر CART است، اما تفسیر برای بیشتر انواع دیگر درخت‌های تصمیم مشابه است.</p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://christophm.github.io/interpretable-ml-book/tree_files/figure-html/fig-tree-artificial-1.png" alt="شکل ۹.۱"><span class="img-wrapper"><img src="https://christophm.github.io/interpretable-ml-book/tree_files/figure-html/fig-tree-artificial-1.png" alt="شکل ۹.۱"></span></label></p>
 <p><strong>شکل ۹.۱:</strong> ساختار یک درخت تصمیم مصنوعی. هر گره داخلی یک قانون تقسیم بر اساس یک ویژگی و آستانه دارد. برگ‌ها مقادیر پیش‌بینی را نگه می‌دارند.</p>
 <h2 id="تفسیر"><a class="header" href="#تفسیر">تفسیر</a></h2>
 <h3 id="تفسیر-قاعدهمحور"><a class="header" href="#تفسیر-قاعدهمحور">تفسیر قاعده‌محور</a></h3>
@@ -235,7 +247,7 @@
 <h3 id="اهمیت-ویژگیها"><a class="header" href="#اهمیت-ویژگیها">اهمیت ویژگی‌ها</a></h3>
 <p>اهمیت هر ویژگی در درخت تصمیم با <strong>میزان کاهشی که آن ویژگی در ناخالصی (واریانس یا گینی) ایجاد کرده</strong> اندازه‌گیری می‌شود. اگر ویژگی $j$ در چند گره مختلف مورد استفاده قرار گرفته، مجموع کاهش‌های ناشی از تمام آن تقسیم‌ها جمع می‌شود. در نهایت این اعداد به نحوی مقیاس می‌شوند که مجموعشان ۱۰۰ باشد و هر عدد سهم آن ویژگی از اهمیت کلی مدل را نشان دهد.</p>
 <blockquote>
-<p><strong>هشدار:</strong> اهمیت گینی (Gini importance) به نفع ویژگی‌های عددی و ویژگی‌های دسته‌ای با دسته‌های زیاد تورش دارد. برای ارزیابی دقیق‌تر، استفاده از <strong>اهمیت ویژگی مبتنی بر جایگشت</strong> (permutation feature importance) توصیه می‌شود.</p>
+<p><strong>هشدار:</strong> اهمیت گینی (Gini importance) به نفع ویژگی‌های عددی و ویژگی‌های دسته‌ای با دسته‌های زیاد تورش دارد (<a href="https://doi.org/10.1186/1471-2105-9-307">Strobl et al. 2008</a>). برای ارزیابی دقیق‌تر، استفاده از <a href="https://christophm.github.io/interpretable-ml-book/feature-importance.html"><strong>اهمیت ویژگی مبتنی بر جایگشت</strong></a> (permutation feature importance) توصیه می‌شود.</p>
 </blockquote>
 <h3 id="تجزیه-پیشبینی-بر-اساس-ویژگیها"><a class="header" href="#تجزیه-پیشبینی-بر-اساس-ویژگیها">تجزیه پیش‌بینی بر اساس ویژگی‌ها</a></h3>
 <p>یکی از قابلیت‌های جالب درخت تصمیم این است که می‌توان پیش‌بینی هر نمونه را به <strong>سهم هر ویژگی</strong> تجزیه کرد. گره ریشه میانگین کلی داده‌های آموزشی ($\bar{y}$) را پیش‌بینی می‌کند. هر تقسیم در مسیر نمونه تا برگ، مقداری به این میانگین اضافه یا از آن کم می‌کند:</p>
@@ -247,33 +259,34 @@
 <li>$\text{feat.contrib}(j, \mathbf{x})$ مجموع سهم تمام تقسیم‌هایی است که از ویژگی $j$ استفاده کرده‌اند.</li>
 </ul>
 <p>یک ویژگی ممکن است چندین بار در مسیر ظاهر شود؛ سهم‌های آن جمع می‌شوند. ویژگی‌هایی که اصلاً در مسیر نمونه استفاده نشده‌اند سهم صفر دارند. این تجزیه نوعی توضیح محلی (local explanation) برای هر پیش‌بینی منفرد فراهم می‌کند.</p>
+<blockquote>
+<p><span style="color:#7C3AED"><strong>مثال مترجم برای درک بهتر خوانندگان:</strong></span> فرض کنید میانگین قیمت همهٔ خانه‌های داده‌ی آموزشی ($\bar{y}$) برابر ۲۰۰ میلیون تومان است. برای خانه‌ای خاص، اولین تقسیم بر اساس متراژ است و چون متراژ خانه بزرگ‌تر از آستانه است، ۳۰ میلیون تومان به پیش‌بینی اضافه می‌شود. تقسیم دوم بر اساس تعداد اتاق‌هاست و چون تعداد اتاق کمتر از آستانه است، ۱۰ میلیون تومان از پیش‌بینی کم می‌شود. پیش‌بینی نهایی برابر است با $200 + 30 - 10 = 220$ میلیون تومان. اگر متراژ در مسیر دیگری هم دوباره استفاده شده باشد، سهم آن تقسیم هم به سهم قبلی «متراژ» اضافه می‌شود؛ در نهایت می‌توانیم بگوییم مثلاً «متراژ» ۳۵ میلیون تومان و «تعداد اتاق» منفی ۱۵ میلیون تومان در پیش‌بینی این خانهٔ خاص سهیم بوده‌اند.</p>
+</blockquote>
 <h2 id="مثال"><a class="header" href="#مثال">مثال</a></h2>
-<p>از داده‌های اجاره دوچرخه (معرفی‌شده در فصل ۵) برای آموزش یک درخت تصمیم رگرسیون با حداکثر عمق ۲ استفاده می‌کنیم:</p>
-<p><img src="https://christophm.github.io/interpretable-ml-book/tree_files/figure-html/fig-tree-example-1.png" alt="شکل ۹.۲"></p>
+<p>از <a href="https://christophm.github.io/interpretable-ml-book/data.html#bike-data">داده‌های اجاره دوچرخه</a> برای پیش‌بینی تعداد دوچرخه‌های اجاره‌شده در یک روز مشخص با یک درخت تصمیم استفاده می‌کنیم. حداکثر عمق مجاز درخت را ۲ در نظر گرفته‌ایم:</p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://christophm.github.io/interpretable-ml-book/tree_files/figure-html/fig-tree-example-1.png" alt="شکل ۹.۲"><span class="img-wrapper"><img src="https://christophm.github.io/interpretable-ml-book/tree_files/figure-html/fig-tree-example-1.png" alt="شکل ۹.۲"></span></label></p>
 <p><strong>شکل ۹.۲:</strong> درخت تصمیم با عمق ۲ برای پیش‌بینی تعداد دوچرخه‌های اجاره‌شده روزانه. دو ویژگی انتخاب‌شده عبارتند از تعداد دوچرخه‌های اجاره‌شده دو روز پیش (<code>cnt_2d_bfr</code>) و دما.</p>
 <p>درخت دو ویژگی انتخاب کرده است: تعداد دوچرخه‌های اجاره‌شده دو روز پیش و دما. قاعده کلی این است: هر چه تعداد اجاره اخیر بیشتر، پیش‌بینی نیز بیشتر. وقتی تعداد اجاره اخیر کم باشد، دما تعیین‌کننده پیش‌بینی می‌شود.</p>
 <p>برای درخت‌های عمیق‌تر، اهمیت ویژگی‌ها به این صورت رتبه‌بندی می‌شود:</p>
-<p><img src="https://christophm.github.io/interpretable-ml-book/tree_files/figure-html/fig-tree-importance-1.png" alt="شکل ۹.۳"></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://christophm.github.io/interpretable-ml-book/tree_files/figure-html/fig-tree-importance-1.png" alt="شکل ۹.۳"><span class="img-wrapper"><img src="https://christophm.github.io/interpretable-ml-book/tree_files/figure-html/fig-tree-importance-1.png" alt="شکل ۹.۳"></span></label></p>
 <p><strong>شکل ۹.۳:</strong> اهمیت ویژگی‌ها در درخت تصمیم عمیق‌تر برای داده‌های اجاره دوچرخه. تعداد دوچرخه دو روز قبل مهم‌ترین ویژگی است، سپس دما، فصل، و آب‌وهوا.</p>
 <h2 id="مزایا"><a class="header" href="#مزایا">مزایا</a></h2>
 <p><strong>گرفتن تعاملات:</strong> ساختار درختی به‌طور طبیعی تعاملات بین ویژگی‌ها را نشان می‌دهد؛ هر تقسیم در یک گره فرزند، تنها برای زیرمجموعه‌ای از داده‌ها اعمال می‌شود که از مسیر خاصی آمده‌اند.</p>
 <p><strong>گروه‌بندی طبیعی:</strong> تقسیم داده به گروه‌های مجزا اغلب شهودی‌تر از خط‌الرأس‌های چند‌بُعدی در رگرسیون خطی است.</p>
 <p><strong>قابلیت تجسم:</strong> درخت را می‌توان به‌راحتی رسم کرد و هر کسی بدون دانش آماری می‌تواند آن را بفهمد. برای درخت‌های کم‌عمق (یک تا سه سطح)، تفسیر بسیار آسان است.</p>
-<p><strong>توضیحات انسان‌پسند:</strong> درخت تصمیم توضیح‌هایی «انسان‌پسند» تولید می‌کند. می‌توان گفت «اگر این شرط وجود نداشت، پیش‌بینی چه می‌شد؟» — نوعی استدلال خلاف‌واقع که برای انسان‌ها طبیعی است.</p>
-<p><strong>بی‌نیازی به تبدیل ویژگی:</strong> CART نسبت به مقیاس و تبدیل‌های یکنوا ویژگی‌ها بی‌تفاوت است. نیازی به نرمال‌سازی یا استانداردسازی نیست.</p>
+<p><strong>توضیحات انسان‌پسند:</strong> ساختار درخت تصمیم توضیح‌هایی خوب، آن‌گونه که در <a href="https://christophm.github.io/interpretable-ml-book/explanation.html#good-explanation">فصل «توضیحات انسان‌پسند»</a> تعریف شده، تولید می‌کند. این ساختار به‌طور طبیعی ما را به فکر کردن دربارهٔ پیش‌بینی هر نمونه به شکل خلاف‌واقع (counterfactual) دعوت می‌کند: «اگر یک ویژگی بزرگ‌تر/کوچک‌تر بود، پیش‌بینی به‌جای y2 برابر y1 می‌شد.» این توضیحات contrastive هستند، چون همیشه می‌توان پیش‌بینی یک نمونه را با سناریوهای «چه می‌شد اگر» مرتبط (که همان برگ‌های دیگر درخت هستند) مقایسه کرد. اگر درخت کوتاه باشد — مثلاً یک تا سه تقسیم عمق داشته باشد — توضیح‌های حاصل selective هم هستند: درختی با عمق سه، حداکثر به سه ویژگی و نقطهٔ تقسیم برای توضیح پیش‌بینی یک نمونه نیاز دارد. صداقت (truthfulness) پیش‌بینی به عملکرد پیش‌بینی درخت بستگی دارد. توضیح‌های درخت‌های کوتاه بسیار ساده و کلی هستند، چون در هر تقسیم، نمونه یا به یک برگ می‌رود یا به برگ دیگر، و تصمیم‌های دودویی به‌راحتی قابل‌فهم‌اند.</p>
+<p><strong>بی‌نیازی به تبدیل ویژگی:</strong> در مدل‌های خطی، گاهی لازم است از یک ویژگی لگاریتم گرفته شود. اما درخت تصمیم با هر تبدیل یکنوای یک ویژگی، به همان خوبی کار می‌کند و نیازی به نرمال‌سازی یا استانداردسازی نیست.</p>
+<blockquote>
+<p><strong>مقیاس ویژگی اهمیتی ندارد:</strong> CART و سایر الگوریتم‌های درخت نسبت به مقیاس و تبدیل‌های یکنوای ویژگی‌ها ناوردا (invariant) هستند. برای مثال، تبدیل واحد یک ویژگی از کیلوگرم به گرم (ضرب در ۱۰۰۰) مقدار نقطهٔ تقسیم را تغییر می‌دهد، اما ساختار کلی درخت بدون تغییر باقی می‌ماند.</p>
+</blockquote>
 <p><strong>تصمیم‌های دودویی ساده:</strong> درخت‌های کم‌عمق (۱ تا ۳ تقسیم) فقط به تعداد کمی ویژگی نیاز دارند و بسیار آسان درک می‌شوند.</p>
 <h2 id="محدودیتها"><a class="header" href="#محدودیتها">محدودیت‌ها</a></h2>
 <p><strong>ضعف در روابط خطی:</strong> وقتی رابطه واقعی بین ویژگی و خروجی خطی است، درخت تصمیم مجبور است آن را با یک تابع پله‌ای تقریب بزند. این تقریب ناکارآمد است و به تقسیم‌بندی‌های بسیار زیادی نیاز دارد تا به دقت یک خط مستقیم برسد.</p>
-<p><strong>ناپیوستگی پیش‌بینی‌ها:</strong> درخت تصمیم پیش‌بینی‌های ثابت (step-function) تولید می‌کند. تغییرات کوچک در ورودی می‌توانند تغییرات بزرگ در پیش‌بینی ایجاد کنند. برای مثال، یک خانه با ۹۹ متر مربع ممکن است پیش‌بینی ۲۰۰٬۰۰۰ یورو داشته باشد و همان خانه با ۱۰۱ متر مربع ۲۰۵٬۰۰۰ یورو — با اینکه تفاوت فیزیکی ناچیز است.</p>
+<p><strong>ناپیوستگی پیش‌بینی‌ها (فقدان صافی):</strong> تغییرات جزئی در یک ویژگی ورودی می‌تواند تأثیر بزرگی روی پیش‌بینی داشته باشد، که معمولاً مطلوب نیست. فرض کنید درختی برای پیش‌بینی قیمت یک خانه، متراژ را یکی از ویژگی‌های تقسیم‌کننده انتخاب کرده و تقسیم دقیقاً در نقطهٔ ۱۰۰٫۵ متر مربع رخ می‌دهد. کاربری را تصور کنید که از این درخت برای برآورد قیمت خانه‌اش استفاده می‌کند: او خانه را اندازه می‌گیرد، به این نتیجه می‌رسد که مساحت آن ۹۹ متر مربع است، آن را در ماشین‌حساب قیمت وارد می‌کند و پیش‌بینی ۲۰۰٬۰۰۰ یورو دریافت می‌کند. سپس متوجه می‌شود که فراموش کرده یک انباری کوچک با مساحت ۲ متر مربع را اندازه بگیرد. این انباری دیوار شیب‌دار دارد، بنابراین کاربر مطمئن نیست که باید کل مساحت آن را حساب کند یا فقط نیمی از آن را. پس تصمیم می‌گیرد هر دو حالت ۱۰۰ و ۱۰۱ متر مربع را امتحان کند. نتیجه: ماشین‌حساب قیمت به ترتیب ۲۰۰٬۰۰۰ و ۲۰۵٬۰۰۰ یورو خروجی می‌دهد، که کاملاً ضدشهودی است، چرا که از ۹۹ به ۱۰۰ متر مربع هیچ تغییری در پیش‌بینی رخ نداده بود.</p>
 <p><strong>ناپایداری:</strong> درخت تصمیم <strong>واریانس بالایی</strong> دارد. تغییرات کوچک در داده‌های آموزشی می‌توانند ساختار کاملاً متفاوتی از درخت ایجاد کنند، چون هر تقسیم بعدی به نتیجه تقسیم‌های قبلی وابسته است. این ناپایداری یکی از دلایل اصلی محبوبیت <strong>جنگل تصادفی</strong> (Random Forest) است که با ترکیب درخت‌های متعدد این واریانس را کاهش می‌دهد.</p>
 <p><strong>مشکل مقیاس‌پذیری با عمق:</strong> تعداد گره‌های برگ با عمق به‌سرعت افزایش می‌یابد. یک درخت دودویی با عمق $d$ حداکثر $2^d$ گره برگ دارد. درخت با عمق ۱۰ می‌تواند تا ۱۰۲۴ برگ داشته باشد — تفسیر چنین درختی دیگر ممکن نیست.</p>
 <h2 id="نرمافزار"><a class="header" href="#نرمافزار">نرم‌افزار</a></h2>
-<p>مثال‌های این فصل با بسته <code>rpart</code> در R پیاده‌سازی شده‌اند که الگوریتم CART را پیاده‌سازی می‌کند. CART در زبان‌های برنامه‌نویسی مختلف در دسترس است:</p>
-<ul>
-<li><strong>Python:</strong> کتابخانه scikit-learn کلاس‌های <code>DecisionTreeClassifier</code> و <code>DecisionTreeRegressor</code> را ارائه می‌دهد.</li>
-<li><strong>Python:</strong> بسته <code>imodels</code> طیف گسترده‌تری از الگوریتم‌های درخت تصمیم را شامل می‌شود، از جمله برازش حریصانه در برابر بهینه، هرس، و گزینه‌های منظم‌سازی مختلف.</li>
-<li><strong>R:</strong> بسته‌های <code>rpart</code>، <code>C50</code>، و <code>party</code> گزینه‌های محبوب هستند.</li>
-</ul>
+<p>برای مثال‌های این فصل از بستهٔ <a href="https://cran.r-project.org/web/packages/rpart/"><code>rpart</code></a> در R استفاده شده که الگوریتم CART (Classification and Regression Trees) را پیاده‌سازی می‌کند. CART در زبان‌های برنامه‌نویسی مختلف، از جمله <a href="https://scikit-learn.org/stable/modules/tree.html">Python</a>، در دسترس است. باید توجه داشت که CART الگوریتمی نسبتاً قدیمی و تا حدی منسوخ‌شده است و الگوریتم‌های جدید و جالبی برای برازش درخت‌ها وجود دارند. برای مروری بر برخی از بسته‌های R مربوط به درخت تصمیم، می‌توانید به <a href="https://cran.r-project.org/web/views/MachineLearning.html">صفحهٔ CRAN Task View یادگیری ماشین و یادگیری آماری</a> زیر کلیدواژهٔ «Recursive Partitioning» مراجعه کنید. در Python، بستهٔ <a href="https://github.com/csinva/imodels"><code>imodels</code></a> الگوریتم‌های مختلفی برای رشد درخت‌های تصمیم (مثلاً برازش حریصانه در برابر بهینه)، هرس درخت‌ها، و منظم‌سازی درخت‌ها ارائه می‌دهد.</p>
 <hr>
 <p><em>درخت تصمیم انتخاب ایده‌آلی است وقتی تفسیرپذیری اولویت اول است، داده‌ها تعاملات غیرخطی دارند، یا می‌خواهیم یک مدل بصری برای ارائه به ذینفعان غیرفنی داشته باشیم. برای عملکرد پیش‌بینی بهتر، روش‌های گروهی مانند جنگل تصادفی یا گرادیان بوستینگ ترجیح دارند.</em></p>
 
@@ -312,6 +325,22 @@
         <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
         <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
         <script>
@@ -321,14 +350,14 @@
 
         <script src="../elasticlunr-ef4e11c1.min.js"></script>
         <script src="../mark-09e88c2c.min.js"></script>
-        <script src="../searcher-c2a407aa.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
         <script src="../clipboard-1626706a.min.js"></script>
         <script src="../highlight-abc7f01d.js"></script>
-        <script src="../book-a0b12cfe.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
-        <script src="../src/theme/custom-5f10e7a2.js"></script>
+        <script src="../src/theme/custom-52114988.js"></script>
 
 
 

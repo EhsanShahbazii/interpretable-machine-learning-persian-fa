@@ -7,6 +7,10 @@
 
 
         <!-- Custom HTML head -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        
         <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
           tex2jax: {
@@ -24,8 +28,8 @@
         <link rel="icon" href="../favicon-de23e50b.svg">
         <link rel="shortcut icon" href="../favicon-8114d1fc.png">
         <link rel="stylesheet" href="../css/variables-8adf115d.css">
-        <link rel="stylesheet" href="../css/general-2459343d.css">
-        <link rel="stylesheet" href="../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
         <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
@@ -37,7 +41,7 @@
         <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="../src/theme/custom-430b9260.css">
+        <link rel="stylesheet" href="../src/theme/custom-f9325651.css">
 
         <!-- MathJax -->
         <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -47,10 +51,10 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-1e4d1623.js";
+            window.path_to_searchindex_js = "../searchindex-196f8323.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc-e37baa1b.js"></script>
+        <script src="../toc-4d2607a6.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -197,111 +201,96 @@
 <p><strong>عنوان اصلی:</strong> Ceteris Paribus Plots<br><strong>منبع:</strong> <a href="https://christophm.github.io/interpretable-ml-book/ceteris-paribus.html">https://christophm.github.io/interpretable-ml-book/ceteris-paribus.html</a><br><strong>نویسنده:</strong> Christoph Molnar<br><strong>مترجم:</strong> مریم محمودی</p>
 </blockquote>
 <hr>
-<p>نمودارهای Ceteris Paribus (CP) نشان می‌دهند که تغییر در یک ویژگی واحد، پیش‌بینی یک نقطه داده را چطور تغییر می‌دهد. عبارت لاتین «سایر شرایط مساوی»<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup> روش را توصیف می‌کند: یک ویژگی را تغییر می‌دهیم و بقیه را دست‌نخورده نگه می‌داریم. منحنی CP نتیجه این فرآیند است و نشان می‌دهد پیش‌بینی با تغییر ویژگی چگونه دگرگون می‌شود.</p>
-<p>نمودارهای CP با روش‌های مهم تفسیر مدل ارتباط مستقیم دارند:</p>
+<p>نمودارهای Ceteris Paribus (CP) (<a href="appendix-D-references.html">Kuźba و همکاران، ۲۰۱۹</a>) نشان می‌دهند که تغییر در یک ویژگی واحد، پیش‌بینی یک نقطه داده را چطور تغییر می‌دهد.</p>
+<p>نمودارهای Ceteris Paribus یکی از ساده‌ترین تحلیل‌هایی هستند که می‌توان انجام داد، با وجود نام لاتین پیچیده‌اش، که به معنای «سایر شرایط مساوی» است<sup class="footnote-reference" id="fr-hate-latin-1"><a href="#footnote-hate-latin">1</a></sup> و یعنی یک ویژگی را تغییر می‌دهیم اما بقیه را دست‌نخورده نگه می‌داریم. این روش آن‌قدر ساده است چون فقط به یک ویژگی در هر لحظه نگاه می‌کند، مقادیر آن را به‌طور نظام‌مند تغییر می‌دهد، و نشان می‌دهد پیش‌بینی در سراسر بازهٔ آن ویژگی چگونه تغییر می‌کند. اما Ceteris Paribus روش مدل‌مستقلی است که برای شروع کتاب عالی است، چون اصول پایه‌ای تفسیر مدل‌مستقل را آموزش می‌دهد. همچنین، سادگی آن نباید فریبتان دهد: با ترکیب خلاقانهٔ چند منحنی Ceteris Paribus<sup class="footnote-reference" id="fr-curve-vs-plot-1"><a href="#footnote-curve-vs-plot">2</a></sup>، می‌توانید مدل‌ها را مقایسه کنید، ویژگی‌ها را مقایسه کنید، و مدل‌های دسته‌بندی چندکلاسه را بررسی کنید. منحنی‌های CP بلوک‌های سازندهٔ <a href="#ice">منحنی‌های Individual Conditional Expectation</a> و <a href="#pdp">نمودارهای وابستگی جزئی</a> هستند، همان‌طور که در شکل ۱۲.۱ نشان داده شده است.</p>
 <ul>
-<li><strong>نمودارهای ICE</strong> مجموعه‌ای از تمام منحنی‌های CP برای کل مجموعه داده هستند.</li>
-<li><strong>نمودار وابستگی جزئی (PDP)</strong> میانگین تمام منحنی‌های CP است.</li>
+<li>نمودارهای ICE، نمودارهای CP هستند که همهٔ منحنی‌های CP را برای کل مجموعه داده در بر دارند.</li>
+<li>یک نمودار وابستگی جزئی (PDP) میانگین همهٔ منحنی‌های CP یک مجموعه داده است.</li>
 </ul>
-<p><img src="https://christophm.github.io/interpretable-ml-book/images/cp-ice-pdp.jpg" alt="رابطه میان Ceteris Paribus، ICE و PDP"></p>
-<p><em>شکل ۱۲.۱: رابطه میان نمودارهای Ceteris Paribus، ICE و PDP. نمودارهای CP منحنی‌های تشکیل‌دهنده ICE هستند و PDP میانگین آن‌هاست.</em></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://christophm.github.io/interpretable-ml-book/images/cp-ice-pdp.jpg" alt="Ceteris Paribus، ICE و PDP."><span class="img-wrapper"><img src="https://christophm.github.io/interpretable-ml-book/images/cp-ice-pdp.jpg" alt="Ceteris Paribus، ICE و PDP."></span></label></p>
+<p><em>شکل ۱۲.۱: رابطه میان Ceteris Paribus، ICE و PDP.</em></p>
 <hr>
 <h2 id="الگوریتم"><a class="header" href="#الگوریتم">الگوریتم</a></h2>
-<h3 id="برای-ویژگیهای-عددی"><a class="header" href="#برای-ویژگیهای-عددی">برای ویژگی‌های عددی</a></h3>
+<p>بیایید با الگوریتم Ceteris Paribus شروع کنیم. این بخش نمونهٔ کوچکی هم هست از این‌که چطور وقتی از ریاضیات استفاده می‌کنیم، چیزها ممکن است پیچیده‌تر از آنچه واقعاً هستند به نظر برسند. الگوریتم زیر برای ویژگی‌های عددی است:</p>
 <p><strong>ورودی:</strong> نقطه داده $\mathbf{x}^{(i)}$ برای توضیح و ویژگی $j$</p>
 <p>۱. یک شبکه مقادیر با فاصله مساوی بسازید: $z_1, \ldots, z_K$، که معمولاً $z_1 = \min(\mathbf{x}_j)$ و $z_K = \max(\mathbf{x}_j)$ است.</p>
-<p>۲. برای هر مقدار شبکه $z_k \in {z_1, \ldots, z_K}$:</p>
+<p>۲. برای هر مقدار شبکه $z_k \in \{z_1, \ldots, z_K\}$:</p>
 <ul>
-<li>یک نقطه داده جدید بسازید $\mathbf{x}^{(i)}_{x_j := z_k}$، که همان $\mathbf{x}^{(i)}$ است با ویژگی $j$ که به $z_k$ تغییر داده شده است.</li>
-<li>پیش‌بینی $\hat{f}(\mathbf{x}^{(i)}_{x_j := z_k})$ را محاسبه کنید.</li>
+<li>یک نقطه داده جدید بسازید $\mathbf{x}^{(i)}_{x_j := z_k}$.</li>
+<li>پیش‌بینی $\hat{f}(\mathbf{x}^{(i)}_{x_j := z_k})$ را به دست آورید.</li>
 </ul>
-<p>۳. منحنی CP را رسم کنید:</p>
+<p>۳. منحنی‌های CP را نمایش دهید:</p>
 <ul>
-<li>یک خط برای جفت‌های $\left{z_k,; \hat{f}(\mathbf{x}^{(i)}_{x_j := z_k})\right}_{k=1}^{K}$ رسم کنید.</li>
-<li>یک نقطه برای نقطه داده اصلی $\left(x_j^{(i)},; \hat{f}(\mathbf{x}^{(i)})\right)$ رسم کنید.</li>
+<li>خطی برای نقاط داده $\left\{z_k,\; \hat{f}(\mathbf{x}^{(i)}_{x_j := z_k})\right\}_{k=1}^{K}$ رسم کنید.</li>
+<li>نقطه‌ای برای نقطه داده اصلی $\left(x_j^{(i)},\; \hat{f}(\mathbf{x}^{(i)})\right)$ رسم کنید.</li>
 </ul>
-<h3 id="برای-ویژگیهای-دستهای"><a class="header" href="#برای-ویژگیهای-دستهای">برای ویژگی‌های دسته‌ای</a></h3>
+<p>هرچه تعداد مقادیر شبکه بیشتر باشد، منحنی CP دقیق‌تر و ریزدانه‌تر خواهد بود، اما تعداد فراخوانی‌هایی که باید به تابع پیش‌بینی مدل انجام دهید نیز بیشتر می‌شود.</p>
+<p>و برای یک ویژگی دسته‌ای:</p>
 <p>۱. فهرست دسته‌های منحصربه‌فرد $z_1, \ldots, z_K$ را بسازید.</p>
-<p>۲. برای هر دسته $z_k \in {z_1, \ldots, z_K}$:</p>
+<p>۲. برای هر دسته $z_k \in \{z_1, \ldots, z_K\}$:</p>
 <ul>
 <li>یک نقطه داده جدید $\mathbf{x}^{(i)}_{x_j := z_k}$ بسازید.</li>
-<li>پیش‌بینی $\hat{f}(\mathbf{x}^{(i)}_{x_j := z_k})$ را محاسبه کنید.</li>
+<li>پیش‌بینی $\hat{f}(\mathbf{x}^{(i)}_{x_j := z_k})$ را به دست آورید.</li>
 </ul>
-<p>۳. یک نمودار میله‌ای یا نقطه‌ای بسازید که دسته‌ها در محور افقی و پیش‌بینی‌ها در محور عمودی باشند.</p>
-<blockquote>
-<p><strong>یادداشت:</strong> در این متن، «منحنی CP» به یک خط واحد در نمودار اشاره دارد، در حالی که «نمودار CP» به کل نمودار — که ممکن است شامل یک یا چند منحنی باشد — اشاره می‌کند.<sup class="footnote-reference" id="fr-2-1"><a href="#footnote-2">2</a></sup></p>
-</blockquote>
+<p>۳. یک نمودار میله‌ای یا نقطه‌ای بسازید که دسته‌ها روی محور افقی و پیش‌بینی‌ها روی محور عمودی قرار بگیرند.</p>
+<p>اما این توضیح پیچیده‌تر از آنچه لازم بود به نظر می‌رسید. بیایید نمودارهای CP را با چند مثال ملموس‌تر کنیم.</p>
 <hr>
 <h2 id="مثالها"><a class="header" href="#مثالها">مثال‌ها</a></h2>
-<h3 id="مثال-پنگوئنها"><a class="header" href="#مثال-پنگوئنها">مثال: پنگوئن‌ها</a></h3>
-<p>یک جنگل تصادفی برای پیش‌بینی جنسیت پنگوئن آموزش داده شده است. در شکل ۱۲.۲، نمودار CP برای یک پنگوئن Adelie با عمق منقار ۲۰.۶ میلی‌متر نشان داده شده است. این نمودار نشان می‌دهد که احتمال پیش‌بینی «ماده بودن» با تغییر عمق منقار چگونه تغییر می‌کند — در حالی که تمام ویژگی‌های دیگر این پنگوئن ثابت می‌مانند.</p>
-<p><img src="https://christophm.github.io/interpretable-ml-book/ceteris-paribus_files/figure-html/fig-ceteris-penguins-1.png" alt="نمودار CP برای عمق منقار پنگوئن"></p>
-<p><em>شکل ۱۲.۲: نمودار Ceteris Paribus برای عمق منقار یک پنگوئن Adelie. نقطه سیاه موقعیت واقعی پنگوئن را نشان می‌دهد. منحنی نشان می‌دهد که با افزایش عمق منقار، احتمال «ماده بودن» کاهش می‌یابد.</em></p>
-<h3 id="هشدار-نقاط-داده-غیرواقعی"><a class="header" href="#هشدار-نقاط-داده-غیرواقعی">هشدار: نقاط داده غیرواقعی</a></h3>
-<p>یکی از محدودیت‌های مهم نمودارهای CP این است که هنگام تغییر مستقل ویژگی‌ها، ممکن است ترکیب‌های غیرواقعی از ویژگی‌ها ایجاد شود. شکل ۱۲.۳ این مشکل را نشان می‌دهد: حتی اگر هر جفت ویژگی به‌تنهایی واقعی به نظر برسد، ترکیب همه ویژگی‌ها ممکن است در ناحیه‌ای از فضای ویژگی قرار گیرد که هیچ نمونه واقعی در آن وجود ندارد.</p>
-<p><img src="https://christophm.github.io/interpretable-ml-book/ceteris-paribus_files/figure-html/fig-pairwise-not-enough-1.png" alt="نقاط داده غیرواقعی در نمودار CP"></p>
-<p><em>شکل ۱۲.۳: نمودار پراکندگی که نشان می‌دهد دستکاری مستقل ویژگی‌ها می‌تواند نقاط داده غیرواقعی ایجاد کند، حتی اگر هر جفت ویژگی به‌تنهایی واقعی به نظر برسد.</em></p>
-<h3 id="مثال-کرایه-دوچرخه"><a class="header" href="#مثال-کرایه-دوچرخه">مثال: کرایه دوچرخه</a></h3>
-<p>برای یک روز زمستانی با هوای خوب، یک مدل SVM پیش‌بینی تعداد دوچرخه‌های اجاره‌شده را انجام می‌دهد. شکل ۱۲.۴ نمودارهای CP را برای همه ویژگی‌ها به‌صورت همزمان نشان می‌دهد.</p>
-<p><img src="https://christophm.github.io/interpretable-ml-book/ceteris-paribus_files/figure-html/fig-whatif-bike-1.png" alt="نمودارهای CP برای داده کرایه دوچرخه"></p>
-<p><em>شکل ۱۲.۴: نمودارهای Ceteris Paribus برای یک روز زمستانی با هوای خوب در مدل SVM. تعداد دوچرخه‌های ۲ روز قبل بیشترین تأثیر را بر پیش‌بینی دارد.</em></p>
+<p>برای اولین مثال، به جنگل تصادفی‌ای نگاه می‌کنیم که احتمال مادگی یک پنگوئن را پیش‌بینی می‌کند. اولین پنگوئن در مجموعه داده آزمون را بررسی می‌کنیم، یک پنگوئن که عمق منقارش چند میلی‌متر است (با جنسیت واقعی مشخص). شکل ۱۲.۲ نشان می‌دهد که کاهش عمق منقار این پنگوئن، ابتدا احتمال پیش‌بینی‌شدهٔ مادگی را کمی افزایش می‌دهد، اما سپس آن را به‌شدت کاهش می‌دهد.</p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://christophm.github.io/interpretable-ml-book/ceteris-paribus_files/figure-html/fig-ceteris-penguins-1.png" alt="نمودار Ceteris Paribus برای عمق منقار و یک پنگوئن."><span class="img-wrapper"><img src="https://christophm.github.io/interpretable-ml-book/ceteris-paribus_files/figure-html/fig-ceteris-penguins-1.png" alt="نمودار Ceteris Paribus برای عمق منقار و یک پنگوئن."></span></label></p>
+<p><em>شکل ۱۲.۲: نمودار Ceteris Paribus برای عمق منقار و یک پنگوئن. خط، مقدار پیش‌بینی‌شده برای این پنگوئن خاص را هنگام تغییر عمق منقار نشان می‌دهد. عمق منقار واقعی پنگوئن با یک نقطه مشخص شده است.</em></p>
+<p>از آن‌جا که این یک وظیفهٔ دسته‌بندی دودویی است، نمایش $\mathbb{P}(Y = \text{male})$ کاری زائد خواهد بود – چراکه این مقدار فقط معکوس نمودار $\mathbb{P}(Y = \text{female})$ خواهد بود. اما اگر بیش از دو کلاس داشتیم، می‌توانستیم منحنی‌های Ceteris Paribus را برای همهٔ کلاس‌ها در یک نمودار رسم کنیم.</p>
+<p>دوباره باید به یاد داشته باشیم که تغییر یک ویژگی می‌تواند وابستگی آن را با ویژگی‌های دیگر بشکند. نگاه‌کردن به همبستگی و دیگر معیارهای وابستگی می‌تواند مفید باشد. عمق منقار با جرم بدن و طول بال‌چه همبسته است. پس هنگام نگاه‌کردن به شکل ۱۲.۲، باید مراقب باشیم کاهش‌های شدید عمق منقار را در این نمودار Ceteris Paribus بیش از حد تفسیر نکنیم.</p>
 <blockquote>
-<p><strong>نکته — نسخه ساده:</strong> Sparklines یک رویکرد مینیمالیستی برای ارائه نمودارهای CP هستند. این نمودارهای کوچک می‌توانند در کنار جدول‌ها یا متن قرار گیرند و فضای کمتری اشغال کنند.</p>
+<p><span style="color:#7C3AED"><strong>توضیح مترجم:</strong></span> «Ceteris paribus» عبارتی لاتین به معنای «سایر شرایط ثابت/مساوی» است. این اصطلاح در اقتصاد و علوم اجتماعی هم رایج است و به این معناست که وقتی اثر یک متغیر را بررسی می‌کنیم، فرض می‌کنیم بقیهٔ متغیرها تغییر نمی‌کنند – دقیقاً همان کاری که این نمودارها انجام می‌دهند: فقط یک ویژگی را تغییر می‌دهند و بقیهٔ ویژگی‌های نقطهٔ داده را ثابت نگه می‌دارند.</p>
 </blockquote>
-<h3 id="مقایسه-مدلها"><a class="header" href="#مقایسه-مدلها">مقایسه مدل‌ها</a></h3>
-<p>شکل ۱۲.۵ منحنی‌های CP را برای چند نوع مدل مختلف مقایسه می‌کند: مدل خطی، جنگل تصادفی، SVM و درخت تصمیم. این مقایسه بینش‌های جالبی درباره رفتار هر مدل ارائه می‌دهد:</p>
-<ul>
-<li><strong>مدل‌های خطی:</strong> رابطه کاملاً خطی نشان می‌دهند.</li>
-<li><strong>درخت‌های تصمیم:</strong> پرش‌های مشخص در مناطق تقسیم‌بندی دارند.</li>
-<li><strong>جنگل‌های تصادفی و SVM:</strong> افزایش یکنواخت‌تر و هموارتری نشان می‌دهند.</li>
-</ul>
-<p><img src="https://christophm.github.io/interpretable-ml-book/ceteris-paribus_files/figure-html/fig-cp-bike-models-1.png" alt="مقایسه منحنی‌های CP در مدل‌های مختلف"></p>
-<p><em>شکل ۱۲.۵: منحنی‌های Ceteris Paribus برای ویژگی دما در مدل‌های مختلف: خطی، جنگل تصادفی، SVM و درخت تصمیم. هر مدل رفتار متمایزی نشان می‌دهد.</em></p>
 <blockquote>
-<p><strong>نکته — کاربردهای خلاقانه:</strong> نمودارهای CP امکانات متنوعی برای تحلیل فراهم می‌کنند:</p>
+<p><strong>فراتر از وابستگی‌های زوجی نگاه کنید</strong></p>
+<p>شکل ۱۲.۳ مثالی را نشان می‌دهد که در آن به‌طور مصنوعی ویژگی عمق منقار سبک‌ترین پنگوئن گونهٔ Gentoo را تغییر می‌دهیم. این نقطه داده وقتی فقط به ترکیب جرم بدن و عمق منقار نگاه کنیم، واقع‌بینانه است. همچنین وقتی فقط به عمق منقار و گونه نگاه کنیم نیز واقع‌بینانه است. اما وقتی عمق منقار جدید، جرم بدن و گونه را با هم در نظر بگیریم، غیرواقعی است.</p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://christophm.github.io/interpretable-ml-book/ceteris-paribus_files/figure-html/fig-pairwise-not-enough-1.png" alt="نمودار پراکندگی عمق منقار و جرم بدن. دستکاری عمق منقار یک پنگوئن می‌تواند یک نقطه داده غیرواقعی ایجاد کند."><span class="img-wrapper"><img src="https://christophm.github.io/interpretable-ml-book/ceteris-paribus_files/figure-html/fig-pairwise-not-enough-1.png" alt="نمودار پراکندگی عمق منقار و جرم بدن. دستکاری عمق منقار یک پنگوئن می‌تواند یک نقطه داده غیرواقعی ایجاد کند."></span></label></p>
+<p><em>شکل ۱۲.۳: نمودار پراکندگی عمق منقار و جرم بدن. دستکاری عمق منقار یک پنگوئن می‌تواند یک نقطه داده غیرواقعی ایجاد کند.</em></p>
+</blockquote>
+<p>سپس، مدل SVM‌ای را بررسی می‌کنیم که تعداد دوچرخه‌های اجاره‌شده را بر اساس اطلاعات آب‌وهوایی و فصلی پیش‌بینی می‌کند. یک روز از یک فصل خاص را با شرایط آب‌وهوایی معین انتخاب می‌کنیم و می‌بینیم تغییر ویژگی‌ها چگونه پیش‌بینی را تغییر می‌دهد. اما این بار آن را برای همهٔ ویژگی‌ها نمایش می‌دهیم، به شکل ۱۲.۴ نگاه کنید. تغییر تعداد دوچرخه‌های اجاره‌شده در ۲ روز قبل، بیشترین تأثیر را بر پیش‌بینی می‌گذارد. همچنین، دمای بالاتر برای اجارهٔ دوچرخهٔ بیشتر بهتر بوده است. اگر پیش‌بینی برای یک روز غیرکاری بود، مدل SVM تعداد اجارهٔ کمتری پیش‌بینی می‌کرد.</p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://christophm.github.io/interpretable-ml-book/ceteris-paribus_files/figure-html/fig-whatif-bike-1.png" alt="نحوهٔ تغییر پیش‌بینی تعداد اجارهٔ دوچرخه با تغییر تک‌تک ویژگی‌ها."><span class="img-wrapper"><img src="https://christophm.github.io/interpretable-ml-book/ceteris-paribus_files/figure-html/fig-whatif-bike-1.png" alt="نحوهٔ تغییر پیش‌بینی تعداد اجارهٔ دوچرخه با تغییر تک‌تک ویژگی‌ها."></span></label></p>
+<p><em>شکل ۱۲.۴: نحوهٔ تغییر پیش‌بینی تعداد اجارهٔ دوچرخه با تغییر تک‌تک ویژگی‌ها.</em></p>
+<blockquote>
+<p><strong>نسخهٔ مینیمال با Sparkline</strong></p>
+<p>نمودارهای CP را می‌توان در قالب Sparkline بسته‌بندی کرد؛ یک نمودار خطی مینیمالیستی که با کار (<a href="appendix-D-references.html">Tufte، ۱۹۸۳</a>) رایج شد.</p>
+</blockquote>
+<p>به‌طور کلی، نمودارهای CP نشان می‌دهند که تغییرات ویژگی – از تغییرات کوچک تا تغییرات بزرگ در همهٔ جهت‌ها – چگونه روی پیش‌بینی اثر می‌گذارد. با مقایسهٔ همهٔ ویژگی‌ها در کنار هم با یک محور عمودی مشترک، می‌توانیم ببینیم کدام ویژگی تأثیر بیشتری بر پیش‌بینی این نقطه داده دارد. با این حال، همبستگی میان ویژگی‌ها یک نگرانی است، به‌خصوص هنگام تفسیر منحنی CP دور از مقدار اصلی (که با نقطه مشخص شده است). برای مثال، افزایش دما تا ۳۰ درجهٔ سلسیوس اما ثابت نگه‌داشتن فصل، کاملاً غیرواقعی خواهد بود.</p>
+<p>نمودارهای Ceteris Paribus بسیار انعطاف‌پذیرند. می‌توانیم منحنی‌های CP را برای مدل‌های مختلف محاسبه کنیم تا بفهمیم آن‌ها چگونه با ویژگی‌ها متفاوت رفتار می‌کنند. در شکل ۱۲.۵، نمودارهای Ceteris Paribus را برای مدل‌های مختلف در پیش‌بینی کرایهٔ دوچرخه مقایسه می‌کنیم.</p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://christophm.github.io/interpretable-ml-book/ceteris-paribus_files/figure-html/fig-cp-bike-models-1.png" alt="منحنی‌های Ceteris Paribus برای وظیفهٔ پیش‌بینی کرایهٔ دوچرخه در مدل‌های مختلف: مدل خطی، جنگل تصادفی، SVM و درخت تصمیم."><span class="img-wrapper"><img src="https://christophm.github.io/interpretable-ml-book/ceteris-paribus_files/figure-html/fig-cp-bike-models-1.png" alt="منحنی‌های Ceteris Paribus برای وظیفهٔ پیش‌بینی کرایهٔ دوچرخه در مدل‌های مختلف: مدل خطی، جنگل تصادفی، SVM و درخت تصمیم."></span></label></p>
+<p><em>شکل ۱۲.۵: منحنی‌های Ceteris Paribus برای وظیفهٔ پیش‌بینی کرایهٔ دوچرخه در مدل‌های مختلف: مدل خطی، جنگل تصادفی، SVM و درخت تصمیم.</em></p>
+<p>این‌جا می‌بینیم مدل‌ها رفتار بسیار متفاوتی دارند: مدل خطی همان کاری را می‌کند که مدل‌های خطی انجام می‌دهند و رابطهٔ میان دما و تعداد پیش‌بینی‌شدهٔ اجارهٔ دوچرخه را به‌صورت خطی مدل‌سازی می‌کند. درخت یک جهش نشان می‌دهد. جنگل تصادفی و مدل SVM افزایشی هموارتر نشان می‌دهند که در دمای بالا مسطح می‌شود، و در مورد SVM، برای دماهای بسیار بالا کمی کاهش می‌یابد.</p>
+<blockquote>
+<p><strong>در مقایسه‌ها خلاق باشید</strong></p>
+<p>نمودارهای Ceteris Paribus ساده‌اند، اما وقتی چند منحنی CP را با هم ترکیب کنید، به‌طرز شگفت‌انگیزی روشنگرند:</p>
 <ul>
-<li>مقایسه ویژگی‌های مختلف در همان مدل</li>
-<li>مقایسه الگوریتم‌های یادگیری ماشین مختلف</li>
-<li>مقایسه احتمال کلاس‌های مختلف</li>
-<li>مقایسه نقاط داده مختلف</li>
-<li>زیرمجموعه‌سازی داده و مقایسه نتایج</li>
+<li>ویژگی‌ها را مقایسه کنید.</li>
+<li>مدل‌های حاصل از الگوریتم‌های یادگیری ماشین متفاوت یا با تنظیمات فراپارامتری متفاوت را مقایسه کنید.</li>
+<li>احتمال کلاس‌ها را مقایسه کنید.</li>
+<li>نقاط داده متفاوت را مقایسه کنید (به <a href="#ice">منحنی‌های ICE</a> هم نگاه کنید).</li>
+<li>داده را زیرمجموعه‌بندی کنید (مثلاً بر اساس یک ویژگی دودویی) و منحنی‌های CP را مقایسه کنید.</li>
 </ul>
 </blockquote>
 <hr>
 <h2 id="نقاط-قوت"><a class="header" href="#نقاط-قوت">نقاط قوت</a></h2>
-<p><strong>سادگی پیاده‌سازی و درک:</strong> نمودارهای CP بسیار ساده برای پیاده‌سازی و درک هستند. این سادگی آن‌ها را برای مبتدیان ارزشمند می‌کند و انتقال مفاهیم تفسیرپذیری به افراد غیرمتخصص را آسان می‌سازد.</p>
-<p><strong>مکمل روش‌های مبتنی بر تخصیص:</strong> نمودارهای CP روش‌های مبتنی بر تخصیص مانند SHAP یا LIME را تکمیل می‌کنند. این روش‌ها نشان می‌دهند که پیش‌بینی چقدر به تغییرات محلی در یک ویژگی حساس است.</p>
-<p><strong>انعطاف‌پذیری به‌عنوان بلوک سازنده:</strong> نمودارهای CP بلوک‌های سازنده انعطاف‌پذیری برای ایجاد بینش‌های دقیق هستند. با ترکیب‌های خلاقانه (مقایسه مدل‌ها، مقایسه ویژگی‌ها، مقایسه نقاط داده) می‌توان تحلیل‌های غنی‌تری انجام داد.</p>
-<hr>
+<p><strong>نمودارهای Ceteris Paribus فوق‌العاده ساده برای پیاده‌سازی و درک هستند.</strong> این ویژگی آن‌ها را نقطهٔ شروع خوبی برای مبتدیان می‌سازد، اما همچنین برای انتقال تفسیرپذیری مدل‌مستقل به دیگران، به‌خصوص افراد غیرمتخصص، مناسب است.</p>
+<p><strong>نمودارهای CP می‌توانند محدودیت‌های روش‌های تخصیص‌محور را جبران کنند.</strong> روش‌های مبتنی بر تخصیص مانند SHAP یا LIME نشان نمی‌دهند تابع پیش‌بینی نسبت به تغییرات محلی چقدر حساس است. نمودارهای Ceteris Paribus می‌توانند مکمل تکنیک‌های تخصیص‌محور باشند و هنگام تفسیر پیش‌بینی‌های فردی، تصویری کامل ارائه دهند.</p>
+<p><strong>نمودارهای Ceteris Paribus بلوک‌های سازندهٔ انعطاف‌پذیری هستند.</strong> آن‌ها بلوک‌های سازندهٔ سایر روش‌های تفسیر هستند، اما همچنین می‌توانید در ترکیب این خطوط در میان مدل‌ها، کلاس‌ها، تنظیمات فراپارامتری و ویژگی‌ها خلاقیت به خرج دهید تا بینش‌های ظریفی دربارهٔ پیش‌بینی‌های مدل ایجاد کنید.</p>
 <h2 id="محدودیتها"><a class="header" href="#محدودیتها">محدودیت‌ها</a></h2>
-<p><strong>تمرکز بر یک ویژگی:</strong> نمودارهای CP فقط تغییر یک ویژگی در یک زمان را بررسی می‌کنند و دیدگاه محدودی درباره تعاملات ویژگی‌ها ارائه می‌دهند. اگر ویژگی‌ها با هم تعامل داشته باشند، CP نمی‌تواند این پیچیدگی را کاملاً نشان دهد.</p>
-<p><strong>مشکل همبستگی:</strong> وقتی ویژگی‌ها با یکدیگر همبسته هستند، بسیاری از بخش‌های منحنی ممکن است نمایانگر ترکیب‌های غیرواقعی یا غیرممکن از مقادیر ویژگی باشند (همان‌طور که در شکل ۱۲.۳ نشان داده شد).</p>
-<p><strong>خطر تفسیر علّی:</strong> این روش خطر بالاتری از تفسیر نادرست علّی دارد، به‌ویژه هنگام اشتراک‌گذاری با افراد غیرمتخصص. کاربران ممکن است به اشتباه نتیجه بگیرند که تغییر در یک ویژگی <em>علت</em> تغییر در پیش‌بینی است، در حالی که این رابطه صرفاً مشروط است.</p>
-<hr>
+<p><strong>نمودارهای Ceteris Paribus فقط تغییر یک ویژگی را در هر لحظه نشان می‌دهند.</strong> این یعنی نمی‌بینیم دو ویژگی چگونه با هم تعامل دارند. البته می‌توانید دو ویژگی را تغییر دهید، به‌خصوص اگر یکی پیوسته و دیگری دودویی باشد، و آن‌ها را در همان نمودار CP رسم کنید. اما این فرآیندی دستی‌تر است.</p>
+<p><strong>وقتی ویژگی‌ها همبسته باشند، تفسیر آسیب می‌بیند.</strong> وقتی ویژگی‌ها همبسته‌اند، همهٔ بخش‌های منحنی محتمل نیستند یا حتی ممکن است کاملاً غیرواقعی باشند. این مشکل را می‌توان با محدودکردن بازهٔ نمودارهای Ceteris Paribus به بازه‌های کوتاه‌تر، دست‌کم برای ویژگی‌های همبسته، کاهش داد. اما این هم به معنای آن است که به یک مدل یا رویه‌ای نیاز داریم که به ما بگوید این بازه‌ها چه هستند.</p>
+<p>به‌طور کلی، باید <strong>در تفسیر علّی محتاط بود</strong>؛ یا اگر تفسیر علّی می‌خواهید، مطمئن شوید خودِ مدل علّی است. این مشکل در همهٔ روش‌های تفسیر وجود دارد، اما خطر تفسیر علّی نادرست ممکن است در نمودارهای CP بیشتر باشد، چون آستانهٔ نمایش این نمودارها به افراد غیرمتخصص پایین‌تر است.</p>
 <h2 id="نرمافزار-و-جایگزینها"><a class="header" href="#نرمافزار-و-جایگزینها">نرم‌افزار و جایگزین‌ها</a></h2>
-<p>این فصل با استفاده از بسته R به نام <strong>ceterisParibus</strong> ایجاد شده است. این بسته همچنین یک پیاده‌سازی Python به نام <strong>pyCeterisParibus</strong> دارد (Kuźba و همکاران، ۲۰۱۹).</p>
-<p>ابزارهای جایگزین برای تولید نمودارهای CP:</p>
-<ul>
-<li><strong>ICEBox</strong>: با ارائه مجموعه داده‌های تک‌نقطه‌ای می‌توان نمودارهای CP تولید کرد.</li>
-<li><strong>iml</strong>: بسته R که نمودارهای CP را از طریق نمودارهای ICE پشتیبانی می‌کند.</li>
-</ul>
-<hr>
-<h2 id="منابع"><a class="header" href="#منابع">منابع</a></h2>
-<ul>
-<li>
-<p>Kuźba, Michał, Ewa Baranowska, و Przemysław Biecek. ۲۰۱۹. «pyCeterisParibus: Explaining Machine Learning Models with Ceteris Paribus Profiles in Python.» <em>Journal of Open Source Software</em> 4 (37): 1389.</p>
-</li>
-<li>
-<p>Tufte, Edward R, و Peter R Graves-Morris. ۱۹۸۳. <em>The Visual Display of Quantitative Information</em>. Graphics press Cheshire, CT.</p>
-</li>
-</ul>
+<p>همهٔ نمودارهای این فصل با بستهٔ R به نام <a href="https://cran.r-project.org/web/packages/ceterisParibus/index.html">ceterisParibus</a> ساخته شده‌اند. این بسته <a href="https://github.com/ModelOriented/pyCeterisParibus">پیاده‌سازی Python</a> هم دارد. همچنین می‌توانید با هر ابزاری که بتواند نمودارهای ICE تولید کند، مانند ICEBox و iml، نمودارهای CP نیز بسازید؛ کافی است یک «مجموعه داده» ارائه دهید که فقط شامل همان یک نقطه دادهٔ موردنظر باشد. با این حال، بستهٔ ceterisParibus مناسب‌تر است چون مقایسهٔ منحنی‌های Ceteris Paribus را ساده‌تر می‌کند.</p>
 <hr>
 <ol class="footnote-definition">
-<li id="footnote-1">
-<p>نام‌گذاری با عبارات لاتین در علم نسبتاً رایج است و نویسنده شک ندارد که این روند ادامه خواهد یافت. <a href="#fr-1-1">↩</a></p>
+<li id="footnote-hate-latin">
+<p>من طرفدار نام لاتین این روش نیستم، چون در مدرسه به ما قول داده بودند که زبان لاتین در یادگیری زبان‌های دیگر برگرفته از لاتین، مثل ایتالیایی، کمک می‌کند. اما می‌دانید چه چیزی حتی بهتر کمک می‌کند وقتی هدفتان یادگیری ایتالیایی است؟ درست است. فقط ایتالیایی یاد بگیرید. <a href="#fr-hate-latin-1">↩</a></p>
 </li>
-<li id="footnote-2">
-<p>تمایز بین «منحنی CP» (یک خط) و «نمودار CP» (نمودار با یک یا چند منحنی) در این فصل رعایت می‌شود. <a href="#fr-2-1">↩</a></p>
+<li id="footnote-curve-vs-plot">
+<p>منظور از «منحنی CP» یک خط واحد است، و منظور از «نمودار CP» نموداری است که یک یا چند منحنی CP را نشان می‌دهد. <a href="#fr-curve-vs-plot-1">↩</a></p>
 </li>
 </ol>
 
@@ -340,6 +329,22 @@
         <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
         <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
         <script>
@@ -349,14 +354,14 @@
 
         <script src="../elasticlunr-ef4e11c1.min.js"></script>
         <script src="../mark-09e88c2c.min.js"></script>
-        <script src="../searcher-c2a407aa.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
         <script src="../clipboard-1626706a.min.js"></script>
         <script src="../highlight-abc7f01d.js"></script>
-        <script src="../book-a0b12cfe.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
-        <script src="../src/theme/custom-5f10e7a2.js"></script>
+        <script src="../src/theme/custom-52114988.js"></script>
 
 
 

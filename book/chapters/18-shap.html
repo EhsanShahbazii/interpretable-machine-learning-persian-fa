@@ -7,6 +7,10 @@
 
 
         <!-- Custom HTML head -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        
         <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
           tex2jax: {
@@ -24,8 +28,8 @@
         <link rel="icon" href="../favicon-de23e50b.svg">
         <link rel="shortcut icon" href="../favicon-8114d1fc.png">
         <link rel="stylesheet" href="../css/variables-8adf115d.css">
-        <link rel="stylesheet" href="../css/general-2459343d.css">
-        <link rel="stylesheet" href="../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
         <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
@@ -37,7 +41,7 @@
         <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="../src/theme/custom-430b9260.css">
+        <link rel="stylesheet" href="../src/theme/custom-f9325651.css">
 
         <!-- MathJax -->
         <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -47,10 +51,10 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-1e4d1623.js";
+            window.path_to_searchindex_js = "../searchindex-196f8323.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc-e37baa1b.js"></script>
+        <script src="../toc-4d2607a6.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -204,7 +208,7 @@
 <blockquote>
 <p><strong>نکته</strong>
 به دنبال راهنمایی جامع و کاربردی درباره شپ و مقادیر شپلی هستید؟ کتاب <em>Interpreting Machine Learning Models with SHAP</em> با مثال‌های عملی پایتون و بسته <code>shap</code>، از مدل‌های ساده تا پیچیده را پوشش می‌دهد. این کتاب به مکانیزم‌های شپ می‌پردازد، الگوهای تفسیر ارائه می‌دهد، و محدودیت‌های کلیدی را روشن می‌سازد.</p>
-<p><img src="images/cover-shap-book.jpg" alt="کتاب SHAP"></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/cover-shap-book.jpg" alt="کتاب SHAP"><span class="img-wrapper"><img src="images/cover-shap-book.jpg" alt="کتاب SHAP"></span></label></p>
 </blockquote>
 <hr>
 <h2 id="مبانی-نظری-شپ"><a class="header" href="#مبانی-نظری-شپ">مبانی نظری شپ</a></h2>
@@ -243,7 +247,7 @@
 ۵. بازگرداندن مقادیر شپلی $\phi_j$ به‌عنوان ضرایب مدل خطی.</p>
 <p>برای ساختن یک ائتلاف تصادفی، به‌سادگی رشته‌ای از صفر و یک را با پرتاب سکه تولید می‌کنیم. برای مثال، بردار $(1, 0, 1, 0)$ نشان‌دهنده ائتلافی از ویژگی اول و سوم است. این ائتلاف‌های نمونه‌برداری‌شده، داده‌های مجموعه رگرسیون را تشکیل می‌دهند و هدف رگرسیون، پیش‌بینی مدل برای آن ائتلاف است.</p>
 <p>اما مدل برای داده‌های باینری ائتلاف آموزش ندیده و نمی‌تواند برای آن‌ها پیش‌بینی کند! برای گذار از ائتلاف‌های ویژگی به نمونه‌های داده معتبر، به تابع $h_x(z’) = z$ نیاز داریم. این تابع مقادیر ۱ را به مقادیر متناظر از نمونه $x$ مورد توضیح نگاشت می‌کند. برای داده‌های جدولی، مقادیر ۰ به مقادیر نمونه دیگری که از داده نمونه‌برداری شده نگاشت می‌شوند — به این معنا که «غیاب ویژگی» معادل «جایگزینی با مقدار تصادفی از داده» است. شکل ۱۸.۱ این نگاشت را نمایش می‌دهد.</p>
-<p><img src="images/shap-simplified-features.jpg" alt="شکل ۱۸.۱: تابع $h_{x}$ یک ائتلاف را به یک نمونه معتبر نگاشت می‌کند. برای ویژگی‌های حاضر (۱)، $h_{x}$ به مقادیر ویژگی $x$ نگاشت می‌کند. برای ویژگی‌های غایب (۰)، $h_{x}$ به مقادیر یک نمونه داده تصادفی نگاشت می‌کند."></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/shap-simplified-features.jpg" alt="شکل ۱۸.۱: تابع $h_{x}$ یک ائتلاف را به یک نمونه معتبر نگاشت می‌کند. برای ویژگی‌های حاضر (۱)، $h_{x}$ به مقادیر ویژگی $x$ نگاشت می‌کند. برای ویژگی‌های غایب (۰)، $h_{x}$ به مقادیر یک نمونه داده تصادفی نگاشت می‌کند."><span class="img-wrapper"><img src="images/shap-simplified-features.jpg" alt="شکل ۱۸.۱: تابع $h_{x}$ یک ائتلاف را به یک نمونه معتبر نگاشت می‌کند. برای ویژگی‌های حاضر (۱)، $h_{x}$ به مقادیر ویژگی $x$ نگاشت می‌کند. برای ویژگی‌های غایب (۰)، $h_{x}$ به مقادیر یک نمونه داده تصادفی نگاشت می‌کند."></span></label></p>
 <p>برای داده‌های جدولی، $h_x$ ویژگی $j$ را با فرض استقلال از سایر ویژگی‌ها در نظر می‌گیرد و بر توزیع حاشیه‌ای انتگرال می‌گیرد:</p>
 <p>$$\hat{f}(h_x(z’)) = E_{X_{-j}}[\hat{f}(x_j, X_{-j})]$$</p>
 <p>نمونه‌برداری از توزیع حاشیه‌ای به معنای نادیده‌گرفتن ساختار وابستگی میان ویژگی‌های حاضر و غایب است. به همین دلیل، KernelSHAP از همان مشکل سایر روش‌های تفسیری مبتنی بر جایگشت رنج می‌برد: تخمین ممکن است به نمونه‌های غیرمحتمل وزن بدهد و نتایج را غیرقابل اعتماد کند.</p>
@@ -253,7 +257,7 @@
 مشکل انتظار شرطی این است که ویژگی‌هایی که هیچ تأثیری بر تابع پیش‌بینی $f$ ندارند می‌توانند تخمین TreeSHAP غیرصفر دریافت کنند — همان‌طور که سوندارارجان و نجمی (۲۰۲۰) و یانزینگ، مینوریکس، و بلوباوم (۲۰۲۰) نشان داده‌اند. این اتفاق زمانی می‌افتد که ویژگی با ویژگی دیگری که واقعاً تأثیرگذار است همبسته باشد.</p>
 </blockquote>
 <p>برای تصاویر، تابع نگاشت $h_x$ ابرپیکسل‌ها را مدیریت می‌کند: ابرپیکسل‌های حاضر به بخش متناظر از تصویر اصلی نگاشت می‌شوند و ابرپیکسل‌های غایب خاکستری می‌شوند (شکل ۱۸.۲).</p>
-<p><img src="images/shap-superpixel.jpg" alt="شکل ۱۸.۲: تابع $h_{x}$ ائتلاف‌های ابرپیکسل‌ها (sp) را به تصاویر نگاشت می‌کند. ابرپیکسل‌ها گروه‌هایی از پیکسل‌ها هستند. برای ویژگی‌های حاضر (۱)، $h_{x}$ بخش متناظر از تصویر اصلی را برمی‌گرداند. برای ویژگی‌های غایب (۰)، $h_{x}$ ناحیه مربوطه را خاکستری می‌کند."></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/shap-superpixel.jpg" alt="شکل ۱۸.۲: تابع $h_{x}$ ائتلاف‌های ابرپیکسل‌ها (sp) را به تصاویر نگاشت می‌کند. ابرپیکسل‌ها گروه‌هایی از پیکسل‌ها هستند. برای ویژگی‌های حاضر (۱)، $h_{x}$ بخش متناظر از تصویر اصلی را برمی‌گرداند. برای ویژگی‌های غایب (۰)، $h_{x}$ ناحیه مربوطه را خاکستری می‌کند."><span class="img-wrapper"><img src="images/shap-superpixel.jpg" alt="شکل ۱۸.۲: تابع $h_{x}$ ائتلاف‌های ابرپیکسل‌ها (sp) را به تصاویر نگاشت می‌کند. ابرپیکسل‌ها گروه‌هایی از پیکسل‌ها هستند. برای ویژگی‌های حاضر (۱)، $h_{x}$ بخش متناظر از تصویر اصلی را برمی‌گرداند. برای ویژگی‌های غایب (۰)، $h_{x}$ ناحیه مربوطه را خاکستری می‌کند."></span></label></p>
 <p>تفاوت اصلی شپ با لایم در <strong>وزن‌دهی نمونه‌ها در مدل رگرسیون</strong> است. لایم نمونه‌ها را بر اساس نزدیکی به نمونه اصلی وزن می‌دهد. شپ نمونه‌ها را بر اساس وزنی که آن ائتلاف در تخمین مقادیر شپلی دریافت می‌کند وزن می‌دهد. ائتلاف‌های کوچک (تعداد کمی ۱) و ائتلاف‌های بزرگ (تعداد زیادی ۱) بیشترین وزن را می‌گیرند، چون بیشترین اطلاعات را درباره تأثیر منفرد ویژگی‌ها ارائه می‌دهند. ائتلاف‌هایی با نیمی از ویژگی‌ها اطلاعات کمتری درباره سهم هر ویژگی منفرد می‌دهند، زیرا ترکیب‌های بسیاری وجود دارد.</p>
 <p>هسته شپ که لاندبرگ و لی (۲۰۱۷) پیشنهاد دادند:</p>
 <p>$$\pi_{x}(z’) = \frac{(M-1)}{\binom{M}{|z’|} |z’|(M-|z’|)}$$</p>
@@ -306,10 +310,10 @@
 <blockquote>
 <p><strong>نکته</strong>
 بسته پایتون <code>shap</code> تجسم‌های متنوعی دارد که می‌تواند گیج‌کننده باشد. به همین دلیل آن‌ها را در <a href="https://christophm.github.io/interpretable-ml-book/">SHAP Plots Cheatsheet</a> خلاصه کرده‌ام، همراه با راهنمای تفسیر هر نمودار.</p>
-<p><img src="images/cheatsheet-shap.jpg" alt="برگه تقلب SHAP"></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/cheatsheet-shap.jpg" alt="برگه تقلب SHAP"><span class="img-wrapper"><img src="images/cheatsheet-shap.jpg" alt="برگه تقلب SHAP"></span></label></p>
 </blockquote>
 <p>شکل ۱۸.۳ نمودارهای نیروی شپ را برای دو پنگوئن از مجموعه داده پنگوئن‌های پالمر نشان می‌دهد: پنگوئن اول به دلیل طول منقار کوچک احتمال بالایی برای بودن از گونه Adelie دارد. پنگوئن دوم به دلیل طول منقار و طول بال بزرگ، احتمال پایینی برای Adelie بودن دارد.</p>
-<p><img src="images/fig-force-plots-1.png" alt="شکل ۱۸.۳: مقادیر شپ برای دو پنگوئن. خط پایه (baseline) — میانگین احتمال پیش‌بینی‌شده — ۰٫۴۷ است. هر ویژگی را می‌توان به‌عنوان نیرویی دید که پیش‌بینی را از خط پایه به بالا یا پایین می‌کشاند."></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/fig-force-plots-1.png" alt="شکل ۱۸.۳: مقادیر شپ برای دو پنگوئن. خط پایه (baseline) — میانگین احتمال پیش‌بینی‌شده — ۰٫۴۷ است. هر ویژگی را می‌توان به‌عنوان نیرویی دید که پیش‌بینی را از خط پایه به بالا یا پایین می‌کشاند."><span class="img-wrapper"><img src="images/fig-force-plots-1.png" alt="شکل ۱۸.۳: مقادیر شپ برای دو پنگوئن. خط پایه (baseline) — میانگین احتمال پیش‌بینی‌شده — ۰٫۴۷ است. هر ویژگی را می‌توان به‌عنوان نیرویی دید که پیش‌بینی را از خط پایه به بالا یا پایین می‌کشاند."></span></label></p>
 <hr>
 <h2 id="نمودارهای-تجمیع-شپ"><a class="header" href="#نمودارهای-تجمیع-شپ">نمودارهای تجمیع شپ</a></h2>
 <p>بخش قبلی توضیح‌هایی برای پیش‌بینی‌های منفرد ارائه داد. مقادیر شپلی را می‌توان در توضیح‌های سراسری ترکیب کرد. اگر شپ را برای هر نمونه اجرا کنیم، یک ماتریس از مقادیر شپلی به دست می‌آوریم — یک سطر به ازای هر نمونه و یک ستون به ازای هر ویژگی. با تحلیل این ماتریس می‌توان کل مدل را تفسیر کرد.</p>
@@ -318,11 +322,11 @@
 <p>$$I_j = \frac{1}{n} \sum_{i=1}^{n} |\phi_j^{(i)}|$$</p>
 <p>سپس ویژگی‌ها را بر اساس اهمیت نزولی مرتب و نمایش می‌دهیم. شکل ۱۸.۴ اهمیت ویژگی شپ را برای جنگل تصادفی طبقه‌بندی پنگوئن‌ها نشان می‌دهد. توده بدنی مهم‌ترین ویژگی بود و احتمال پیش‌بینی‌شده را تا ۲۵ درصد تغییر داد.</p>
 <p>اهمیت ویژگی شپ جایگزینی برای اهمیت ویژگی جایگشتی (permutation feature importance) است. تفاوت اصلی این است که اهمیت ویژگی جایگشتی بر کاهش عملکرد مدل مبتنی است، در حالی که شپ بر بزرگی انتساب‌های ویژگی.</p>
-<p><img src="images/shap-importance.jpg" alt="شکل ۱۸.۴: اهمیت ویژگی شپ که به‌عنوان میانگین مقادیر شپلی قدرمطلق اندازه‌گیری می‌شود."></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/shap-importance.jpg" alt="شکل ۱۸.۴: اهمیت ویژگی شپ که به‌عنوان میانگین مقادیر شپلی قدرمطلق اندازه‌گیری می‌شود."><span class="img-wrapper"><img src="images/shap-importance.jpg" alt="شکل ۱۸.۴: اهمیت ویژگی شپ که به‌عنوان میانگین مقادیر شپلی قدرمطلق اندازه‌گیری می‌شود."></span></label></p>
 <h3 id="نمودار-خلاصه-شپ-shap-summary-plot"><a class="header" href="#نمودار-خلاصه-شپ-shap-summary-plot">نمودار خلاصه شپ (SHAP Summary Plot)</a></h3>
 <p>نمودار خلاصه، اهمیت ویژگی را با اثرات ویژگی ترکیب می‌کند. هر نقطه در این نمودار یک مقدار شپلی برای یک ویژگی و یک نمونه است. محور y ویژگی را مشخص می‌کند و محور x مقدار شپلی را. رنگ نشان‌دهنده مقدار ویژگی از کم به زیاد است. نقاط هم‌پوشان در جهت y پراکنده می‌شوند تا توزیع مقادیر شپلی هر ویژگی قابل مشاهده باشد. ویژگی‌ها بر اساس اهمیت مرتب شده‌اند.</p>
 <p>در نمودار خلاصه (شکل ۱۸.۵) نشانه‌های اولیه‌ای از رابطه میان مقدار ویژگی و تأثیر بر پیش‌بینی دیده می‌شود. توده بدنی بیشتر، سهم منفی در احتمال ماده بودن دارد. همچنین توده بدنی بیشترین دامنه اثرات را در میان پنگوئن‌های مختلف نشان می‌دهد.</p>
-<p><img src="images/shap-importance-extended.jpg" alt="شکل ۱۸.۵: نمودار خلاصه شپ."></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/shap-importance-extended.jpg" alt="شکل ۱۸.۵: نمودار خلاصه شپ."><span class="img-wrapper"><img src="images/shap-importance-extended.jpg" alt="شکل ۱۸.۵: نمودار خلاصه شپ."></span></label></p>
 <h3 id="نمودار-وابستگی-شپ-shap-dependence-plot"><a class="header" href="#نمودار-وابستگی-شپ-shap-dependence-plot">نمودار وابستگی شپ (SHAP Dependence Plot)</a></h3>
 <p>وابستگی ویژگی شپ شاید ساده‌ترین نمودار تفسیر سراسری باشد:</p>
 <p>۱. یک ویژگی انتخاب کنید.
@@ -330,7 +334,7 @@
 ۳. تمام.</p>
 <p>به‌صورت ریاضی، نمودار شامل این نقاط است: ${(x_j^{(i)}, \phi_j^{(i)})}_{i=1}^n$</p>
 <p>شکل ۱۸.۶ وابستگی ویژگی شپ برای توده بدنی را نشان می‌دهد: هر چه پنگوئن سنگین‌تر، احتمال ماده بودنش کمتر.</p>
-<p><img src="images/shap-dependence.jpg" alt="شکل ۱۸.۶: نمودار وابستگی شپ برای توده بدنی. محور x ویژگی و محور y مقادیر شپ را نشان می‌دهد. هر نقطه نمایانگر یک نمونه داده است."></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/shap-dependence.jpg" alt="شکل ۱۸.۶: نمودار وابستگی شپ برای توده بدنی. محور x ویژگی و محور y مقادیر شپ را نشان می‌دهد. هر نقطه نمایانگر یک نمونه داده است."><span class="img-wrapper"><img src="images/shap-dependence.jpg" alt="شکل ۱۸.۶: نمودار وابستگی شپ برای توده بدنی. محور x ویژگی و محور y مقادیر شپ را نشان می‌دهد. هر نقطه نمایانگر یک نمونه داده است."></span></label></p>
 <p>نمودارهای وابستگی شپ جایگزینی برای روش‌های سراسری اثر ویژگی مانند نمودارهای وابستگی جزئی (PDP) و اثرات محلی تجمعی (ALE) هستند. در حالی که PDP و ALE اثرات میانگین را نشان می‌دهند، وابستگی شپ واریانس را نیز در محور y نمایش می‌دهد. به‌ویژه در صورت وجود تعاملات، نمودار وابستگی شپ پراکندگی بیشتری در محور y خواهد داشت. برجسته‌سازی تعاملات ویژگی می‌تواند نمودار وابستگی را غنی‌تر کند.</p>
 <h3 id="مقادیر-تعامل-شپ-shap-interaction-values"><a class="header" href="#مقادیر-تعامل-شپ-shap-interaction-values">مقادیر تعامل شپ (SHAP Interaction Values)</a></h3>
 <p>اثر تعامل، اثر ترکیبی اضافه‌ای است که پس از احتساب اثرات منفرد هر ویژگی باقی می‌ماند. شاخص تعامل شپلی از نظریه بازی‌ها به‌صورت زیر تعریف می‌شود:</p>
@@ -339,7 +343,7 @@
 <p>$$\delta_{ij}(S) = \hat{f}_{x}(S \cup {i,j}) - \hat{f}_{x}(S \cup {i}) - \hat{f}_{x}(S \cup {j}) + \hat{f}_{x}(S)$$</p>
 <p>این فرمول اثر اصلی ویژگی‌ها را کم می‌کند تا اثر تعامل خالص به دست آید. ارزش‌ها را میانگین‌گیری می‌کنیم، مشابه محاسبه مقادیر شپلی. وقتی مقادیر تعامل شپ را برای همه ویژگی‌ها محاسبه می‌کنیم، یک ماتریس $M \times M$ برای هر نمونه به دست می‌آوریم.</p>
 <p>یک کاربرد: رنگ‌آمیزی خودکار نمودار وابستگی شپ با قوی‌ترین تعامل، مانند شکل ۱۸.۷. در اینجا توده بدنی با عمق منقار تعامل دارد.</p>
-<p><img src="images/shap-dependence-interaction.jpg" alt="شکل ۱۸.۷: نمودار وابستگی ویژگی شپ با نمایش تعامل. در اینجا نمودار وابستگی طول منقار را در تعامل با توده بدنی می‌بینیم. به‌ویژه برای منقارهای بلندتر، سهم طول منقار در P(Adelie) بر اساس توده بدنی متفاوت است."></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/shap-dependence-interaction.jpg" alt="شکل ۱۸.۷: نمودار وابستگی ویژگی شپ با نمایش تعامل. در اینجا نمودار وابستگی طول منقار را در تعامل با توده بدنی می‌بینیم. به‌ویژه برای منقارهای بلندتر، سهم طول منقار در P(Adelie) بر اساس توده بدنی متفاوت است."><span class="img-wrapper"><img src="images/shap-dependence-interaction.jpg" alt="شکل ۱۸.۷: نمودار وابستگی ویژگی شپ با نمایش تعامل. در اینجا نمودار وابستگی طول منقار را در تعامل با توده بدنی می‌بینیم. به‌ویژه برای منقارهای بلندتر، سهم طول منقار در P(Adelie) بر اساس توده بدنی متفاوت است."></span></label></p>
 <blockquote>
 <p><strong>نکته: تحلیل عمیق‌تر تعاملات</strong>
 موضوع تعاملات در شپ بسیار گسترده است. برای تحلیل پیشرفته‌تر تعاملات شپ، بسته <code>shapiq</code> (موشالیک و همکاران، ۲۰۲۴) را پیشنهاد می‌کنم.</p>
@@ -348,7 +352,7 @@
 <p>می‌توان داده‌ها را با کمک مقادیر شپلی خوشه‌بندی کرد. هدف خوشه‌بندی یافتن گروه‌هایی از نمونه‌های مشابه است. خوشه‌بندی معمول بر اساس ویژگی‌ها انجام می‌شود، اما ویژگی‌ها اغلب مقیاس‌های متفاوتی دارند و محاسبه فاصله میان آن‌ها دشوار می‌شود.</p>
 <p>خوشه‌بندی شپ بر اساس مقادیر شپلی هر نمونه انجام می‌شود — یعنی نمونه‌ها بر اساس شباهت توضیح خوشه‌بندی می‌شوند. همه مقادیر شپ یک واحد مشترک دارند: واحد فضای پیش‌بینی. هر الگوریتم خوشه‌بندی قابل استفاده است.</p>
 <p>شکل ۱۸.۸ از خوشه‌بندی تجمعی سلسله‌مراتبی برای مرتب‌سازی نمونه‌ها استفاده می‌کند. نمودار از بسیاری نمودار نیروی چرخیده‌شده به حالت عمودی در کنار هم تشکیل شده که بر اساس شباهت خوشه‌بندی کنار هم قرار گرفته‌اند.</p>
-<p><img src="images/shap-clustering.jpg" alt="شکل ۱۸.۸: توضیحات شپ انباشته (Stacked SHAP) که بر اساس شباهت توضیح خوشه‌بندی شده‌اند. هر موقعیت در محور x یک نمونه از داده است. مقادیر شپ قرمز پیش‌بینی را افزایش می‌دهند، مقادیر آبی آن را کاهش می‌دهند."></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/shap-clustering.jpg" alt="شکل ۱۸.۸: توضیحات شپ انباشته (Stacked SHAP) که بر اساس شباهت توضیح خوشه‌بندی شده‌اند. هر موقعیت در محور x یک نمونه از داده است. مقادیر شپ قرمز پیش‌بینی را افزایش می‌دهند، مقادیر آبی آن را کاهش می‌دهند."><span class="img-wrapper"><img src="images/shap-clustering.jpg" alt="شکل ۱۸.۸: توضیحات شپ انباشته (Stacked SHAP) که بر اساس شباهت توضیح خوشه‌بندی شده‌اند. هر موقعیت در محور x یک نمونه از داده است. مقادیر شپ قرمز پیش‌بینی را افزایش می‌دهند، مقادیر آبی آن را کاهش می‌دهند."></span></label></p>
 <hr>
 <h2 id="نقاط-قوت"><a class="header" href="#نقاط-قوت">نقاط قوت</a></h2>
 <p>از آنجا که شپ مقادیر شپلی را محاسبه می‌کند، همه مزایای مقادیر شپلی را به ارث می‌برد: پایه نظری محکم در نظریه بازی‌ها، توزیع عادلانه پیش‌بینی میان مقادیر ویژگی، و توضیح‌های تقابلی که پیش‌بینی را با پیش‌بینی میانگین مقایسه می‌کنند.</p>
@@ -401,6 +405,22 @@
         <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
         <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
         <script>
@@ -410,14 +430,14 @@
 
         <script src="../elasticlunr-ef4e11c1.min.js"></script>
         <script src="../mark-09e88c2c.min.js"></script>
-        <script src="../searcher-c2a407aa.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
         <script src="../clipboard-1626706a.min.js"></script>
         <script src="../highlight-abc7f01d.js"></script>
-        <script src="../book-a0b12cfe.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
-        <script src="../src/theme/custom-5f10e7a2.js"></script>
+        <script src="../src/theme/custom-52114988.js"></script>
 
 
 

@@ -7,6 +7,10 @@
 
 
         <!-- Custom HTML head -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        
         <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
           tex2jax: {
@@ -24,8 +28,8 @@
         <link rel="icon" href="../favicon-de23e50b.svg">
         <link rel="shortcut icon" href="../favicon-8114d1fc.png">
         <link rel="stylesheet" href="../css/variables-8adf115d.css">
-        <link rel="stylesheet" href="../css/general-2459343d.css">
-        <link rel="stylesheet" href="../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
         <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
@@ -37,7 +41,7 @@
         <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="../src/theme/custom-430b9260.css">
+        <link rel="stylesheet" href="../src/theme/custom-f9325651.css">
 
         <!-- MathJax -->
         <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -47,10 +51,10 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-1e4d1623.js";
+            window.path_to_searchindex_js = "../searchindex-196f8323.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc-e37baa1b.js"></script>
+        <script src="../toc-4d2607a6.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -198,7 +202,7 @@
 </blockquote>
 <hr>
 <p>روش‌های انتساب پیکسلی (pixel attribution) پیکسل‌هایی را که در طبقه‌بندی یک تصویر توسط شبکه‌ی عصبی نقش داشته‌اند برجسته می‌کنند. شکل ۲۸.۱ نمونه‌ای از این نوع توضیح است.</p>
-<p><img src="images/vanilla.jpg" alt="شکل ۲۸.۱: نقشه‌ای از برجستگی (saliency map) که پیکسل‌ها بر اساس میزان مشارکت‌شان در طبقه‌بندی رنگ‌آمیزی شده‌اند."></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/vanilla.jpg" alt="شکل ۲۸.۱: نقشه‌ای از برجستگی (saliency map) که پیکسل‌ها بر اساس میزان مشارکت‌شان در طبقه‌بندی رنگ‌آمیزی شده‌اند."><span class="img-wrapper"><img src="images/vanilla.jpg" alt="شکل ۲۸.۱: نقشه‌ای از برجستگی (saliency map) که پیکسل‌ها بر اساس میزان مشارکت‌شان در طبقه‌بندی رنگ‌آمیزی شده‌اند."></span></label></p>
 <p>در ادامه‌ی این فصل خواهیم دید که این تصویر دقیقاً چه اطلاعاتی را به ما می‌دهد. روش‌های انتساب پیکسلی با نام‌های گوناگونی شناخته می‌شوند: نقشه‌ی حساسیت (sensitivity map)، نقشه‌ی برجستگی (saliency map)، نقشه‌ی انتساب پیکسلی (pixel attribution map)، روش‌های انتساب مبتنی بر گرادیان (gradient-based attribution methods)، ربط ویژگی (feature relevance)، انتساب ویژگی (feature attribution) و مشارکت ویژگی (feature contribution).</p>
 <p>انتساب پیکسلی نوع خاصی از انتساب ویژگی است که برای تصاویر به کار می‌رود. انتساب ویژگی، پیش‌بینی‌های منفرد را از طریق نسبت دادن سهم هر ویژگی ورودی — به میزان تأثیر مثبت یا منفی آن بر پیش‌بینی — توضیح می‌دهد. این ویژگی‌ها می‌توانند پیکسل‌های تصویر، داده‌های جدولی یا کلمات باشند. SHAP (شپ)، مقادیر شپلی (Shapley Values) و LIME (لایم) نمونه‌هایی از روش‌های عمومی انتساب ویژگی هستند.</p>
 <p>در اینجا شبکه‌های عصبی‌ای را در نظر می‌گیریم که خروجی‌شان بردار طولِ $C$ است؛ رگرسیون نیز با $C=1$ در این چارچوب می‌گنجد. خروجی شبکه‌ی عصبی برای تصویر $\mathbf{x}$ را $S(\mathbf{x})=[S_1(\mathbf{x}),\ldots,S_C(\mathbf{x})]$ می‌نامیم. همه‌ی این روش‌ها ورودی $\mathbf{x} \in\mathbb{R}^p$ (که می‌تواند پیکسل‌های تصویر، داده‌های جدولی، کلمات و غیره باشد) با $p$ ویژگی را دریافت می‌کنند و برای هر یک از $p$ ویژگی ورودی یک امتیاز ربط (relevance score) به عنوان توضیح تولید می‌کنند: $\mathbf{R}^c=[R_1^c,\ldots,R_p^c]$. نماد $c$ نشان‌دهنده‌ی ربط برای خروجی $c$ام، یعنی $S_C(\mathbf{x})$، است.</p>
@@ -294,10 +298,10 @@ $$</p>
 <h2 id="مثالها"><a class="header" href="#مثالها">مثال‌ها</a></h2>
 <p>بیایید ببینیم این نقشه‌ها چه شکلی هستند و روش‌ها از نظر کیفی چگونه با هم مقایسه می‌شوند. شبکه‌ی مورد بررسی VGG-16 (Simonyan and Zisserman 2015) است که روی ImageNet آموزش دیده و می‌تواند ۱٬۰۰۰ کلاس مختلف را تشخیص دهد. برای تصاویر زیر، توضیحاتی برای کلاس با بالاترین امتیاز طبقه‌بندی تولید می‌کنیم.</p>
 <p>شکل ۲۸.۲ تصاویر و طبقه‌بندی آن‌ها توسط شبکه‌ی عصبی را نشان می‌دهد:</p>
-<p><img src="images/original-images-classification.jpg" alt="شکل ۲۸.۲: تصاویر یک سگ که به عنوان greyhound، یک سوپ رامن که به عنوان کاسه‌ی سوپ (soup bowl)، و یک اختاپوس که به عنوان مار آبی (eel) طبقه‌بندی شده‌اند."></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/original-images-classification.jpg" alt="شکل ۲۸.۲: تصاویر یک سگ که به عنوان greyhound، یک سوپ رامن که به عنوان کاسه‌ی سوپ (soup bowl)، و یک اختاپوس که به عنوان مار آبی (eel) طبقه‌بندی شده‌اند."><span class="img-wrapper"><img src="images/original-images-classification.jpg" alt="شکل ۲۸.۲: تصاویر یک سگ که به عنوان greyhound، یک سوپ رامن که به عنوان کاسه‌ی سوپ (soup bowl)، و یک اختاپوس که به عنوان مار آبی (eel) طبقه‌بندی شده‌اند."></span></label></p>
 <p>تصویر سمت چپ با سگ محترم نگهبان کتاب یادگیری ماشین تفسیرپذیر، با احتمال ۳۵٪ به عنوان «Greyhound» طبقه‌بندی شده است (به نظر می‌رسد «کتاب یادگیری ماشین تفسیرپذیر» جزء ۲۰ هزار کلاس نبوده). تصویر وسط کاسه‌ای از سوپ رامن خوشمزه را نشان می‌دهد و با احتمال ۵۰٪ به درستی به عنوان «Soup Bowl» طبقه‌بندی شده. تصویر سوم اختاپوسی را در بستر اقیانوس نشان می‌دهد که با احتمال بالای ۷۰٪ به اشتباه به عنوان «Eel» (مار آبی) طبقه‌بندی شده است.</p>
 <p>شکل ۲۸.۳ انتسابات پیکسلی که طبقه‌بندی را توضیح می‌دهند نشان می‌دهد:</p>
-<p><img src="images/smoothgrad.jpg" alt="شکل ۲۸.۳: انتسابات پیکسلی یا نقشه‌های برجستگی برای روش‌های Vanilla Gradient، SmoothGrad و Grad-CAM."></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/smoothgrad.jpg" alt="شکل ۲۸.۳: انتسابات پیکسلی یا نقشه‌های برجستگی برای روش‌های Vanilla Gradient، SmoothGrad و Grad-CAM."><span class="img-wrapper"><img src="images/smoothgrad.jpg" alt="شکل ۲۸.۳: انتسابات پیکسلی یا نقشه‌های برجستگی برای روش‌های Vanilla Gradient، SmoothGrad و Grad-CAM."></span></label></p>
 <p>متأسفانه کمی آشفته است. اما بیایید توضیحات منفرد را بررسی کنیم، با شروع از سگ. هم گرادیان ساده و هم SmoothGrad خود سگ را برجسته می‌کنند که منطقی است. اما هر دو بخش‌هایی از اطراف کتاب را هم برجسته می‌کنند که عجیب است. Grad-CAM تنها ناحیه‌ی کتاب را برجسته می‌کند که اصلاً منطقی نیست. و از اینجا به بعد کمی آشفته‌تر می‌شود. به نظر می‌رسد روش گرادیان ساده برای هم سوپ و هم اختاپوس (یا همان‌طور که شبکه فکر می‌کند، مار آبی) شکست می‌خورد. هر دو تصویر مثل تصاویر ماندگار پس از نگاه کردن مستقیم به خورشید هستند. (لطفاً مستقیم به خورشید نگاه نکنید.) SmoothGrad کمک زیادی می‌کند؛ دست‌کم نواحی مشخص‌تری نشان می‌دهد. در مثال سوپ، برخی مواد مثل تخم‌مرغ و گوشت برجسته می‌شوند، اما ناحیه‌ی اطراف چاپستیک‌ها هم هستند. در تصویر اختاپوس، عمدتاً خود حیوان برجسته شده. برای کاسه‌ی سوپ، Grad-CAM بخش تخم‌مرغ و به دلایلی نامشخص، بخش بالایی کاسه را برجسته می‌کند. توضیحات Grad-CAM برای اختاپوس هم آشفته‌تر از این هستند.</p>
 <p>از همین اینجا می‌توان دشواری‌های ارزیابی درستی توضیحات را دید. در گام اول باید در نظر بگیریم کدام بخش‌های تصویر حاوی اطلاعات مرتبط با طبقه‌بندی تصویر هستند. اما سپس باید در مورد آنچه شبکه‌ی عصبی ممکن است برای طبقه‌بندی استفاده کرده باشد هم فکر کنیم. شاید کاسه‌ی سوپ بر اساس ترکیب تخم‌مرغ و چاپستیک‌ها به درستی طبقه‌بندی شده، آن‌طور که SmoothGrad نشان می‌دهد؟ یا شاید شبکه‌ی عصبی شکل کاسه به همراه برخی مواد را تشخیص داده، آن‌طور که Grad-CAM پیشنهاد می‌دهد؟ ما نمی‌دانیم.</p>
 <p>و این مشکل اصلی همه‌ی این روش‌هاست. برای توضیحات هیچ حقیقت زمینه‌ای (ground truth) نداریم. تنها می‌توانیم در گام اول توضیحاتی را که آشکارا بی‌معنی هستند رد کنیم (و حتی در این گام هم اطمینان زیادی نداریم). فرایند پیش‌بینی در شبکه‌ی عصبی بسیار پیچیده است.</p>
@@ -365,6 +369,22 @@ $$</p>
         <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
         <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
         <script>
@@ -374,14 +394,14 @@ $$</p>
 
         <script src="../elasticlunr-ef4e11c1.min.js"></script>
         <script src="../mark-09e88c2c.min.js"></script>
-        <script src="../searcher-c2a407aa.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
         <script src="../clipboard-1626706a.min.js"></script>
         <script src="../highlight-abc7f01d.js"></script>
-        <script src="../book-a0b12cfe.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
-        <script src="../src/theme/custom-5f10e7a2.js"></script>
+        <script src="../src/theme/custom-52114988.js"></script>
 
 
 

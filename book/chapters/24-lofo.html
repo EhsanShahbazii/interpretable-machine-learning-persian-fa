@@ -7,6 +7,10 @@
 
 
         <!-- Custom HTML head -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        
         <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
           tex2jax: {
@@ -24,8 +28,8 @@
         <link rel="icon" href="../favicon-de23e50b.svg">
         <link rel="shortcut icon" href="../favicon-8114d1fc.png">
         <link rel="stylesheet" href="../css/variables-8adf115d.css">
-        <link rel="stylesheet" href="../css/general-2459343d.css">
-        <link rel="stylesheet" href="../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
         <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
@@ -37,7 +41,7 @@
         <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="../src/theme/custom-430b9260.css">
+        <link rel="stylesheet" href="../src/theme/custom-f9325651.css">
 
         <!-- MathJax -->
         <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -47,10 +51,10 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-1e4d1623.js";
+            window.path_to_searchindex_js = "../searchindex-196f8323.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc-e37baa1b.js"></script>
+        <script src="../toc-4d2607a6.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -222,16 +226,16 @@
 <p>هنگام استفاده از معیارهای عملکرد به جای معیارهای خطا — مانند دقت که مقدار بزرگ‌تر بهتر است — مطمئن شوید که تفاضل را در منفی یک ضرب کنید، یا ترتیب صورت و مخرج کسر را جابجا کنید. برای آموزش و بازآموزش مدل از داده‌های آموزشی، و برای اندازه‌گیری عملکرد از داده‌های آزمایش استفاده کنید.</p>
 <h2 id="مثالها"><a class="header" href="#مثالها">مثال‌ها</a></h2>
 <p>تعداد اجاره دوچرخه را بر اساس اطلاعات آب‌وهوایی و تقویمی پیش‌بینی می‌کنیم؛ یک Random Forest (جنگل تصادفی) روی ۲/۳ داده‌ها آموزش دیده است. شکل ۲۴.۱ نشان می‌دهد که دما و تعداد اجاره قبلی دوچرخه، مهم‌ترین ویژگی‌ها طبق LOFO هستند. ویژگی تعطیلات اهمیت منفی دارد که پیامدی برای انتخاب ویژگی (feature selection) دارد: بر اساس نحوه کار الگوریتمی LOFO، اکنون می‌دانیم که حذف ویژگی تعطیلات عملکرد مدل را بهبود می‌بخشد.</p>
-<p><img src="images/fig-lofo-bike-1.png" alt="شکل ۲۴.۱: اهمیت‌های LOFO برای داده‌های اجاره دوچرخه، جایی که دما تکرار شده و یک ویژگی کاملاً همبسته (temp_copy) به داده‌ها اضافه شده است."></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/fig-lofo-bike-1.png" alt="شکل ۲۴.۱: اهمیت‌های LOFO برای داده‌های اجاره دوچرخه، جایی که دما تکرار شده و یک ویژگی کاملاً همبسته (temp_copy) به داده‌ها اضافه شده است."><span class="img-wrapper"><img src="images/fig-lofo-bike-1.png" alt="شکل ۲۴.۱: اهمیت‌های LOFO برای داده‌های اجاره دوچرخه، جایی که دما تکرار شده و یک ویژگی کاملاً همبسته (temp_copy) به داده‌ها اضافه شده است."></span></label></p>
 <p>حال آزمایشی انجام می‌دهیم. برای شبیه‌سازی نسخه‌ای افراطی از ویژگی‌های همبسته، یک مجموعه داده دوچرخه جدید ساختم که دو ستون دما دارد: temp و temp_copy. همان‌طور که حدس می‌زنید، temp_copy دقیقاً همان مقادیر temp را دارد، یعنی همبستگی ۱۰۰٪. دوباره یک Random Forest روی این مجموعه داده جدید آموزش دادم. ببینیم اهمیت‌های LOFO چه تغییری می‌کنند.</p>
-<p><img src="images/fig-lofo-bike-correlated-1.png" alt="شکل ۲۴.۲: اهمیت‌های LOFO برای داده‌های اجاره دوچرخه."></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/fig-lofo-bike-correlated-1.png" alt="شکل ۲۴.۲: اهمیت‌های LOFO برای داده‌های اجاره دوچرخه."><span class="img-wrapper"><img src="images/fig-lofo-bike-correlated-1.png" alt="شکل ۲۴.۲: اهمیت‌های LOFO برای داده‌های اجاره دوچرخه."></span></label></p>
 <p>شکل ۲۴.۲ پدیده جالبی نشان می‌دهد: اهمیت‌های LOFO هر دو ویژگی دما اکنون تقریباً صفر است.<sup class="footnote-reference" id="fr-2-1"><a href="#footnote-2">2</a></sup> اما اگر مثلاً temp_copy را حذف کنیم، به مدل اصلی می‌رسیم که در آن دما مهم‌ترین ویژگی بود. واضح است که نتیجه‌گیری درباره اینکه این مدل جدید اصلاً به دما وابسته نیست، اشتباه خواهد بود. هر دو ویژگی temp و temp_copy اهمیت پایینی می‌گیرند؛ چون طبق تعریف LOFO، مهم نیستند. وقتی ویژگی temp را حذف می‌کنیم، هیچ اطلاعاتی از دست نمی‌رود، زیرا temp_copy همان اطلاعات را نگه می‌دارد. LOFO تفسیر شرطی دارد: با توجه به سایر ویژگی‌ها، حذف یک ویژگی چقدر عملکرد پیش‌بینی مدل را بدتر می‌کند؟ نتیجه‌گیری‌ها:</p>
 <ul>
 <li>اهمیت LOFO ویژگی‌های کاملاً همبسته همیشه پایین است و حتی می‌تواند منفی باشد،<sup class="footnote-reference" id="fr-3-1"><a href="#footnote-3">3</a></sup> زیرا اهمیت LOFO باید مشروط بر اطلاعات سایر ویژگی‌ها تفسیر شود. اگر یک ویژگی دما در داده‌ها دارید، نسخه کاملاً یکسان آن اطلاعات جدید مهمی به حساب نمی‌آید.</li>
 <li>وقتی از اهمیت LOFO برای انتخاب ویژگی استفاده می‌کنید، مراقب تفسیر باشید: LOFO فقط نشان می‌دهد که عملکرد مدل به حذف تک‌تک ویژگی‌ها چه واکنشی نشان می‌دهد. همان‌طور که شکل ۲۴.۲ نشان داد، LOFO اطلاعاتی درباره تغییر عملکرد هنگام حذف همزمان ۲ یا بیشتر ویژگی ارائه نمی‌دهد.</li>
 </ul>
 <p>با این دانش، LOFO را برای یک Random Forest که جنسیت پنگوئن را از اندازه‌های بدن پیش‌بینی می‌کند امتحان می‌کنیم. یک Random Forest روی ۲/۳ داده‌ها آموزش داده‌ام و ۱/۳ باقیمانده را برای تخمین خطا کنار گذاشته‌ام. شکل ۲۴.۳ نشان می‌دهد که عمق منقار مهم‌ترین ویژگی طبق LOFO بوده است.</p>
-<p><img src="images/fig-lofo-penguins-1.png" alt="شکل ۲۴.۳: اهمیت‌های LOFO برای داده‌های پنگوئن."></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/fig-lofo-penguins-1.png" alt="شکل ۲۴.۳: اهمیت‌های LOFO برای داده‌های پنگوئن."><span class="img-wrapper"><img src="images/fig-lofo-penguins-1.png" alt="شکل ۲۴.۳: اهمیت‌های LOFO برای داده‌های پنگوئن."></span></label></p>
 <p>توجه داشته باشید که چون از دقت استفاده کردم (که مقدار بزرگ‌تر بهتر است)، اهمیت را در منفی یک ضرب کردم. LOFO همچنین نشان می‌دهد که می‌توان ویژگی‌های species و flipper_length را بدون مشکل حذف کرد. با این حال، نگه داشتن species ضروری است، زیرا مدل باید بتواند بین گونه‌های مختلف تمایز قائل شود.</p>
 <h2 id="lofo-در-برابر-pfi"><a class="header" href="#lofo-در-برابر-pfi">LOFO در برابر PFI</a></h2>
 <p>LOFO با سایر روش‌های ارائه‌شده در این کتاب متفاوت است، زیرا اکثر روش‌های دیگر نیازی به بازآموزش مدل ندارند. می‌توان گفت LOFO یک روش پس‌از‌آموزش (post-hoc) و مدل‌آزاد (model-agnostic) است؛ چون روی هر مدلی قابل اعمال است و بازآموزش، مدل اصلی موردنظر را تغییر نمی‌دهد. اما به دلیل بازآموزش، تفسیر از تحلیل یک مدل واحد به تفسیر الگوریتم یادگیری و نحوه واکنش آموزش مدل به تغییرات ویژگی‌ها تغییر می‌کند.</p>
@@ -301,6 +305,22 @@
         <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
         <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
         <script>
@@ -310,14 +330,14 @@
 
         <script src="../elasticlunr-ef4e11c1.min.js"></script>
         <script src="../mark-09e88c2c.min.js"></script>
-        <script src="../searcher-c2a407aa.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
         <script src="../clipboard-1626706a.min.js"></script>
         <script src="../highlight-abc7f01d.js"></script>
-        <script src="../book-a0b12cfe.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
-        <script src="../src/theme/custom-5f10e7a2.js"></script>
+        <script src="../src/theme/custom-52114988.js"></script>
 
 
 

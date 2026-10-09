@@ -7,6 +7,10 @@
 
 
         <!-- Custom HTML head -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        
         <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
           tex2jax: {
@@ -24,8 +28,8 @@
         <link rel="icon" href="../favicon-de23e50b.svg">
         <link rel="shortcut icon" href="../favicon-8114d1fc.png">
         <link rel="stylesheet" href="../css/variables-8adf115d.css">
-        <link rel="stylesheet" href="../css/general-2459343d.css">
-        <link rel="stylesheet" href="../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
         <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
@@ -37,7 +41,7 @@
         <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="../src/theme/custom-430b9260.css">
+        <link rel="stylesheet" href="../src/theme/custom-f9325651.css">
 
         <!-- MathJax -->
         <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -47,10 +51,10 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-1e4d1623.js";
+            window.path_to_searchindex_js = "../searchindex-196f8323.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc-e37baa1b.js"></script>
+        <script src="../toc-4d2607a6.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -198,13 +202,13 @@
 </blockquote>
 <hr>
 <p>این فصل مروری بر رویکردهای تفسیرپذیری ارائه می‌دهد. هدف این است که نقشه‌ای در اختیار شما قرار دهیم تا وقتی وارد جزئیات مدل‌ها و روش‌های مختلف می‌شوید، بتوانید جنگل را از میان درختان ببینید. شکل ۴.۱ طبقه‌بندی رویکردهای مختلف را نشان می‌دهد.</p>
-<p><img src="images/taxonomy.jpg" alt="شکل ۴.۱"></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/taxonomy.jpg" alt="شکل ۴.۱"><span class="img-wrapper"><img src="images/taxonomy.jpg" alt="شکل ۴.۱"></span></label></p>
 <p><strong>شکل ۴.۱:</strong> طبقه‌بندی مختصر روش‌های تفسیرپذیری که ساختار کتاب را منعکس می‌کند.</p>
 <p>به طور کلی می‌توانیم بین تفسیرپذیری از طریق طراحی و تفسیرپذیری پسینی تمایز قائل شویم. تفسیرپذیری از طریق طراحی به این معناست که مدل‌هایی را آموزش می‌دهیم که ذاتاً قابل تفسیر هستند، مانند استفاده از رگرسیون لجستیک به جای جنگل تصادفی. تفسیرپذیری پسینی به این معناست که از یک روش تفسیرپذیری پس از آموزش مدل استفاده می‌کنیم. روش‌های تفسیر پسینی می‌توانند مدل-ناآگاه باشند، مانند اهمیت ویژگی با جایگشت، یا مدل-خاص، مانند تحلیل ویژگی‌های یادگرفته شده توسط یک شبکه عصبی. روش‌های مدل-ناآگاه را می‌توان به روش‌های موضعی که بر توضیح پیش‌بینی‌های فردی تمرکز دارند، و روش‌های سراسری که بر مجموعه داده‌ها متمرکز هستند، تقسیم کرد. این کتاب بر روش‌های پسینی مدل-ناآگاه تمرکز دارد اما مدل‌های پایه‌ای که از طریق طراحی قابل تفسیر هستند و روش‌های مدل-خاص برای شبکه‌های عصبی را نیز پوشش می‌دهد.</p>
 <p>بیایید به هر دسته از تفسیرپذیری نگاه کنیم و همچنین نقاط قوت و ضعف آن‌ها را در ارتباط با اهداف تفسیری شما بررسی کنیم.</p>
 <h2 id="مدلهای-قابل-تفسیر-از-طریق-طراحی"><a class="header" href="#مدلهای-قابل-تفسیر-از-طریق-طراحی">مدل‌های قابل تفسیر از طریق طراحی</a></h2>
 <p>تفسیرپذیری از طریق طراحی در سطح الگوریتم یادگیری ماشین تصمیم‌گیری می‌شود. اگر می‌خواهید یک الگوریتم یادگیری ماشین که مدل‌های قابل تفسیر تولید می‌کند، داشته باشید، الگوریتم باید جستجوی مدل‌ها را به آن‌هایی که قابل تفسیر هستند محدود کند. ساده‌ترین مثال رگرسیون خطی است: وقتی از روش حداقل مربعات معمولی برای برازش/آموزش یک مدل رگرسیون خطی استفاده می‌کنید، از الگوریتمی استفاده می‌کنید که مدل‌هایی خطی نسبت به ویژگی‌های ورودی تولید خواهد کرد. مدل‌هایی که از طریق طراحی قابل تفسیر هستند، مدل‌های ذاتاً یا فطرتاً قابل تفسیر نیز نامیده می‌شوند، شکل ۴.۲ را ببینید.</p>
-<p><img src="images/interpretable-box.jpg" alt="شکل ۴.۲"></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/interpretable-box.jpg" alt="شکل ۴.۲"><span class="img-wrapper"><img src="images/interpretable-box.jpg" alt="شکل ۴.۲"></span></label></p>
 <p><strong>شکل ۴.۲:</strong> تفسیرپذیری از طریق طراحی به معنای استفاده از الگوریتم‌های یادگیری ماشین است که مدل‌های «ذاتاً قابل تفسیر» تولید می‌کنند.</p>
 <p>این کتاب پایه‌ای‌ترین رویکردهای تفسیرپذیری از طریق طراحی را پوشش می‌دهد:</p>
 <ul>
@@ -247,10 +251,10 @@
 </ul>
 <h3 id="روشهای-پسینی-مدل-ناآگاه"><a class="header" href="#روشهای-پسینی-مدل-ناآگاه">روش‌های پسینی مدل-ناآگاه</a></h3>
 <p>روش‌های مدل-ناآگاه بر اساس اصل SIPA کار می‌کنند: نمونه‌برداری از داده‌ها، انجام یک مداخله بر روی داده‌ها، دریافت پیش‌بینی‌ها برای داده‌های دستکاری‌شده، و تجمیع نتایج (Scholbeck et al. 2020). مثالی از این، اهمیت ویژگی با جایگشت است: یک نمونه داده می‌گیریم، با جایگشت آن بر روی داده مداخله می‌کنیم، پیش‌بینی‌های مدل را دریافت می‌کنیم، و خطای مدل را دوباره محاسبه و با خطای اصلی مقایسه می‌کنیم (تجمیع). آنچه این روش‌ها را مدل-ناآگاه می‌کند این است که نیازی به «نگاه کردن به داخل» مدل ندارند، مانند خواندن ضرایب یا وزن‌ها، همان‌طور که در شکل ۴.۳ نمایش داده شده است.</p>
-<p><img src="images/agnostic-black-box.jpg" alt="شکل ۴.۳"></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/agnostic-black-box.jpg" alt="شکل ۴.۳"><span class="img-wrapper"><img src="images/agnostic-black-box.jpg" alt="شکل ۴.۳"></span></label></p>
 <p><strong>شکل ۴.۳:</strong> روش‌های تفسیر مدل-ناآگاه با ورودی‌ها و خروجی‌ها کار می‌کنند و داخلی‌های مدل را نادیده می‌گیرند.</p>
 <p>تفسیر مدل-ناآگاه، تفسیر مدل را از آموزش مدل جدا می‌کند. با نگاه کردن به این موضوع از سطح بالاتر، فرآیند مدل‌سازی یک لایه دیگر به دست می‌آورد: از جهان شروع می‌شود که آن را در قالب داده ضبط می‌کنیم، از آن یک مدل یاد می‌گیریم. در بالای آن مدل، روش‌های تفسیرپذیری برای انسان‌ها داریم. شکل ۴.۴ را ببینید. برای روش‌های مدل-ناآگاه، این جداسازی را داریم، در حالی که برای تفسیرپذیری از طریق طراحی، لایه‌های مدل و تفسیرپذیری در یک لایه ادغام شده‌اند.</p>
-<p><img src="images/big-picture.jpg" alt="شکل ۴.۴"></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/big-picture.jpg" alt="شکل ۴.۴"><span class="img-wrapper"><img src="images/big-picture.jpg" alt="شکل ۴.۴"></span></label></p>
 <p><strong>شکل ۴.۴:</strong> تصویر کلی از یادگیری ماشین قابل تفسیر (مدل-ناآگاه). دنیای واقعی از لایه‌های زیادی می‌گذرد تا به شکل توضیحات به انسان برسد.</p>
 <p>جداسازی توضیحات از مدل یادگیری ماشین (= روش‌های تفسیر مدل-ناآگاه) مزایایی دارد (Ribeiro, Singh, and Guestrin 2016). بزرگ‌ترین نقطه قوت، انعطاف‌پذیری در هر دو انتخاب مدل و انتخاب روش تفسیر است. برای مثال، اگر اثرات ویژگی یک مدل XGBoost را با نمودار وابستگی جزئی (PDP) تجسم می‌کنید، حتی می‌توانید مدل پایه را تغییر دهید و همچنان از همان نوع تفسیر استفاده کنید. یا اگر دیگر PDP را دوست ندارید، می‌توانید از اثرات موضعی انباشته (ALE) بدون نیاز به تغییر مدل پایه XGBoost استفاده کنید. اما اگر از یک مدل رگرسیون خطی استفاده می‌کنید و ضرایب را تفسیر می‌کنید، تغییر به یک دسته‌بندی‌کننده مبتنی بر قاعده، وسیله تفسیر را نیز تغییر خواهد داد. برخی روش‌های مدل-ناآگاه حتی به شما انعطاف‌پذیری در نمایش ویژگی مورد استفاده برای ایجاد توضیحات می‌دهند: برای مثال، می‌توانید توضیحاتی را بر اساس بخش‌های تصویر به جای پیکسل‌ها هنگام توضیح خروجی‌های دسته‌بندی‌کننده تصویر ایجاد کنید.</p>
 <p>روش‌های تفسیر مدل-ناآگاه را می‌توان به روش‌های موضعی و سراسری تقسیم کرد. روش‌های موضعی هدفشان توضیح پیش‌بینی‌های فردی است، در حالی که روش‌های سراسری توصیف می‌کنند که چگونه ویژگی‌ها به طور متوسط بر پیش‌بینی‌ها تأثیر می‌گذارند.</p>
@@ -291,7 +295,7 @@
 </blockquote>
 <h3 id="روشهای-پسینی-مدل-خاص"><a class="header" href="#روشهای-پسینی-مدل-خاص">روش‌های پسینی مدل-خاص</a></h3>
 <p>همان‌طور که از نام پیداست، روش‌های پسینی مدل-خاص پس از آموزش مدل اعمال می‌شوند اما فقط برای مدل‌های یادگیری ماشین خاصی کار می‌کنند، همان‌طور که در شکل ۴.۵ نمایش داده شده است. نمونه‌های زیادی از این دست وجود دارد، از اهمیت جینی برای جنگل‌های تصادفی تا محاسبه نسبت شانس برای رگرسیون لجستیک. این کتاب بر روش‌های تفسیر پسینی برای شبکه‌های عصبی تمرکز دارد.</p>
-<p><img src="images/specific-black-box.jpg" alt="شکل ۴.۵"></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/specific-black-box.jpg" alt="شکل ۴.۵"><span class="img-wrapper"><img src="images/specific-black-box.jpg" alt="شکل ۴.۵"></span></label></p>
 <p><strong>شکل ۴.۵:</strong> روش‌های مدل-خاص مدل‌های پیچیده را با تحلیل مدل‌ها قابل تفسیرتر می‌کنند.</p>
 <p>برای انجام پیش‌بینی با یک شبکه عصبی، داده‌های ورودی از لایه‌های زیادی از ضرب با وزن‌های یادگرفته‌شده و تبدیلات غیرخطی عبور می‌کنند. یک پیش‌بینی واحد می‌تواند شامل میلیون‌ها ضرب باشد، بسته به معماری شبکه عصبی. هیچ شانسی وجود ندارد که ما انسان‌ها بتوانیم نگاشت دقیق از ورودی داده به پیش‌بینی را دنبال کنیم. باید میلیون‌ها وزن را که به شیوه‌های پیچیده با هم تعامل دارند در نظر بگیریم تا پیش‌بینی یک شبکه عصبی را درک کنیم. برای تفسیر رفتار و پیش‌بینی‌های شبکه‌های عصبی، به روش‌های تفسیر خاصی نیاز داریم. شبکه‌های عصبی هدف جالبی برای تفسیر هستند زیرا شبکه‌های عصبی در لایه‌های پنهان خود ویژگی‌ها و مفاهیم را یاد می‌گیرند. همچنین می‌توانیم از گرادیان‌های آن‌ها برای روش‌های کارآمد محاسباتی استفاده کنیم.</p>
 <p>بخش شبکه‌های عصبی تکنیک‌های زیر را پوشش می‌دهد که به سؤالات مختلفی پاسخ می‌دهند:</p>
@@ -347,6 +351,22 @@
         <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
         <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
         <script>
@@ -356,14 +376,14 @@
 
         <script src="../elasticlunr-ef4e11c1.min.js"></script>
         <script src="../mark-09e88c2c.min.js"></script>
-        <script src="../searcher-c2a407aa.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
         <script src="../clipboard-1626706a.min.js"></script>
         <script src="../highlight-abc7f01d.js"></script>
-        <script src="../book-a0b12cfe.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
-        <script src="../src/theme/custom-5f10e7a2.js"></script>
+        <script src="../src/theme/custom-52114988.js"></script>
 
 
 
