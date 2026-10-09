@@ -3,3 +3,4 @@ venv/
 # Claude Code local scratch workspace (new files only; already-tracked
 # .claude/settings*.json and .claude/summary.md remain tracked — see CLAUDE.md)
 .claude/
+.DS_Store
