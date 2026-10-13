@@ -42,6 +42,12 @@ body {
   font-family: var(--font-code) !important;
 }
 
+.content :not(pre) > code {
+  direction: ltr;
+  display: inline-block;
+  unicode-bidi: isolate;
+}
+
 /* ─── Sidebar ─── */
 #mdbook-sidebar {
   background-color: var(--navy) !important;
