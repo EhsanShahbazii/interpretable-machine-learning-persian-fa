@@ -74,6 +74,29 @@ body {
   background: rgba(255,255,255,0.1) !important;
 }
 
+/* ─── Dynamic Sidebar Subsection Links ─── */
+#mdbook-sidebar .on-this-page {
+  padding-right: 6px;
+  margin: 6px 0;
+  border-right: 1px dashed rgba(214, 158, 46, 0.3);
+}
+
+#mdbook-sidebar .on-this-page a {
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-size: 13.5px !important;
+  line-height: 1.6 !important;
+  padding: 4px 10px !important;
+  border-radius: 4px !important;
+  display: block;
+  border-right: 3px solid transparent !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+#mdbook-sidebar .on-this-page a:hover {
+  color: var(--white) !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
 .sidebar-scrollbox {
   background: var(--navy) !important;
 }
