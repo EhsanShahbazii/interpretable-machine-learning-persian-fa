@@ -97,6 +97,16 @@ body {
   background: rgba(255, 255, 255, 0.1) !important;
 }
 
+#mdbook-sidebar .on-this-page a.current-header {
+  color: var(--amber-light) !important;
+  background: rgba(214, 158, 46, 0.25) !important;
+  font-weight: 600 !important;
+  border-right: 3px solid var(--amber) !important;
+  border-radius: 4px 0 0 4px !important;
+  padding-right: 12px !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
 .sidebar-scrollbox {
   background: var(--navy) !important;
 }
