@@ -99,15 +99,73 @@
     });
   }
 
+  function scrollSidebarToActive() {
+    var current = document.querySelector("#mdbook-sidebar .current-header");
+    var scrollbox = document.querySelector("mdbook-sidebar-scrollbox");
+    if (!current || !scrollbox) return;
+
+    var itemRect = current.getBoundingClientRect();
+    var boxRect = scrollbox.getBoundingClientRect();
+
+    var isComfortablyVisible =
+      itemRect.top >= boxRect.top + 70 &&
+      itemRect.bottom <= boxRect.bottom - 70;
+
+    if (!isComfortablyVisible) {
+      var relativeTop = itemRect.top - boxRect.top + scrollbox.scrollTop;
+      var targetTop = relativeTop - (boxRect.height / 2) + (itemRect.height / 2);
+      scrollbox.scrollTo({
+        top: Math.max(0, targetTop),
+        behavior: "smooth"
+      });
+    }
+  }
+
+  function setupSidebarScrollSync() {
+    var sidebar = document.getElementById("mdbook-sidebar");
+    if (sidebar) {
+      var observer = new MutationObserver(function (mutations) {
+        for (var i = 0; i < mutations.length; i++) {
+          var m = mutations[i];
+          if (m.attributeName === "class" && m.target.classList.contains("current-header")) {
+            scrollSidebarToActive();
+            break;
+          }
+        }
+      });
+
+      observer.observe(sidebar, {
+        attributes: true,
+        attributeFilter: ["class"],
+        subtree: true
+      });
+    }
+
+    var ticking = false;
+    window.addEventListener("scroll", function () {
+      if (!ticking) {
+        window.requestAnimationFrame(function () {
+          scrollSidebarToActive();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+
+    setTimeout(scrollSidebarToActive, 300);
+  }
+
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", function () {
       injectSidebarAvatar();
       setupCoverDrop();
       markTranslatorNotes();
+      setupSidebarScrollSync();
     });
   } else {
     injectSidebarAvatar();
     setupCoverDrop();
     markTranslatorNotes();
+    setupSidebarScrollSync();
   }
 })();
