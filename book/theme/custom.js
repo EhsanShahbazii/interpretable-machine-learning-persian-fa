@@ -99,7 +99,11 @@
     });
   }
 
+  var isUserInteractingWithSidebar = false;
+  var userInteractionTimeout = null;
+
   function scrollSidebarToActive() {
+    if (isUserInteractingWithSidebar) return;
     var current = document.querySelector("#mdbook-sidebar .current-header");
     var scrollbox = document.querySelector("mdbook-sidebar-scrollbox");
     if (!current || !scrollbox) return;
@@ -122,6 +126,39 @@
   }
 
   function setupSidebarScrollSync() {
+    var scrollbox = document.querySelector("mdbook-sidebar-scrollbox");
+    if (scrollbox) {
+      scrollbox.addEventListener("mouseenter", function () {
+        isUserInteractingWithSidebar = true;
+        clearTimeout(userInteractionTimeout);
+      });
+
+      scrollbox.addEventListener("mouseleave", function () {
+        userInteractionTimeout = setTimeout(function () {
+          isUserInteractingWithSidebar = false;
+        }, 1200);
+      });
+
+      scrollbox.addEventListener("wheel", function () {
+        isUserInteractingWithSidebar = true;
+        clearTimeout(userInteractionTimeout);
+        userInteractionTimeout = setTimeout(function () {
+          isUserInteractingWithSidebar = false;
+        }, 2000);
+      }, { passive: true });
+
+      scrollbox.addEventListener("touchstart", function () {
+        isUserInteractingWithSidebar = true;
+        clearTimeout(userInteractionTimeout);
+      }, { passive: true });
+
+      scrollbox.addEventListener("touchend", function () {
+        userInteractionTimeout = setTimeout(function () {
+          isUserInteractingWithSidebar = false;
+        }, 1500);
+      });
+    }
+
     var sidebar = document.getElementById("mdbook-sidebar");
     if (sidebar) {
       var observer = new MutationObserver(function (mutations) {
