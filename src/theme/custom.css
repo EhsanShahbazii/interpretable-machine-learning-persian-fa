@@ -611,3 +611,157 @@ footer {
 footer a {
   color: var(--navy-light);
 }
+
+/* ─── Night Reading Theme (حالت مطالعه شب) ─── */
+html.theme-dark,
+html.theme-dark body {
+  background-color: #0F172A !important;
+  color: #F1F5F9 !important;
+}
+
+html.theme-dark .page {
+  background: #0F172A !important;
+}
+
+html.theme-dark #mdbook-content {
+  background: #1E293B !important;
+  background-image: none !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.45) !important;
+  border: 1px solid #334155 !important;
+}
+
+html.theme-dark #mdbook-content::before {
+  display: none !important;
+}
+
+html.theme-dark .nav-wide-wrapper,
+html.theme-dark .nav-wrapper {
+  background: #1E293B !important;
+  border-bottom: 2px solid var(--amber) !important;
+}
+
+html.theme-dark .nav-chapters,
+html.theme-dark .mobile-nav-chapters {
+  color: #F8FAFC !important;
+}
+
+html.theme-dark .nav-chapters:hover,
+html.theme-dark .mobile-nav-chapters:hover {
+  color: var(--amber-light) !important;
+  background: #0F172A !important;
+}
+
+html.theme-dark .menu-bar .icon-button {
+  color: #CBD5E1 !important;
+}
+
+html.theme-dark .menu-bar .icon-button:hover {
+  color: var(--amber-light) !important;
+}
+
+html.theme-dark .menu-title {
+  color: #F8FAFC !important;
+}
+
+html.theme-dark .content h1,
+html.theme-dark .content h2,
+html.theme-dark .content h3,
+html.theme-dark .content h4,
+html.theme-dark .content h5,
+html.theme-dark .content h6 {
+  color: #F8FAFC !important;
+  border-color: var(--amber) !important;
+}
+
+html.theme-dark .content p,
+html.theme-dark .content li,
+html.theme-dark .content td,
+html.theme-dark .content th {
+  color: #F1F5F9 !important;
+}
+
+html.theme-dark .content a {
+  color: #60A5FA !important;
+}
+
+html.theme-dark .content a:hover {
+  color: var(--amber-light) !important;
+}
+
+html.theme-dark .content table th {
+  background: #0F172A !important;
+  color: #F8FAFC !important;
+}
+
+html.theme-dark .content table td,
+html.theme-dark .content table th {
+  border-color: #334155 !important;
+}
+
+html.theme-dark .content table tr:nth-child(even) {
+  background: #162032 !important;
+}
+
+html.theme-dark .content blockquote {
+  background: #162032 !important;
+  border-right-color: var(--amber) !important;
+  color: #CBD5E1 !important;
+}
+
+html.theme-dark .content blockquote.translator-note {
+  background: #2E1065 !important;
+  border-right-color: #A855F7 !important;
+  color: #E9D5FF !important;
+}
+
+html.theme-dark .content blockquote.translator-note strong {
+  color: #F3E8FF !important;
+}
+
+html.theme-dark .content code,
+html.theme-dark .content pre,
+html.theme-dark .content tt {
+  background: #0B1120 !important;
+  color: #38BDF8 !important;
+  border-color: #334155 !important;
+}
+
+html.theme-dark .MathJax,
+html.theme-dark .MathJax_Display,
+html.theme-dark .MathJax span {
+  color: #F1F5F9 !important;
+}
+
+html.theme-dark #mdbook-sidebar {
+  background-color: #0B1120 !important;
+}
+
+html.theme-dark .sidebar-scrollbox {
+  background: #0B1120 !important;
+}
+
+html.theme-dark .cover-toc {
+  background: #1E293B !important;
+  border: 1px solid #334155 !important;
+}
+
+html.theme-dark .metadata-table td {
+  background: #1E293B !important;
+  border-color: #334155 !important;
+  color: #F1F5F9 !important;
+}
+
+html.theme-dark .metadata-table tr:nth-child(even) td {
+  background: #162032 !important;
+}
+
+html.theme-dark footer {
+  border-top-color: #334155 !important;
+  color: #94A3B8 !important;
+}
+
+/* Hide confusing default mdbook theme list popup */
+#mdbook-theme-list {
+  display: none !important;
+}
+

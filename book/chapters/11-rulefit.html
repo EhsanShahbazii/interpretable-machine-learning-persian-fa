@@ -11,6 +11,17 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
         
+        <script>
+          (function() {
+            try {
+              var savedTheme = localStorage.getItem('iml-fa-dark-theme');
+              if (savedTheme === 'dark' || (!savedTheme && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('theme-dark');
+              }
+            } catch (e) {}
+          })();
+        </script>
+        
         <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
           "HTML-CSS": {
@@ -50,7 +61,7 @@
         <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="../src/theme/custom-1280919d.css">
+        <link rel="stylesheet" href="../src/theme/custom-277c73b0.css">
 
         <!-- MathJax -->
         <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -428,7 +439,7 @@
         <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
-        <script src="../src/theme/custom-f0b01bac.js"></script>
+        <script src="../src/theme/custom-357526c5.js"></script>
 
 
 
