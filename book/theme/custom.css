@@ -114,6 +114,45 @@ body {
   background: var(--navy) !important;
 }
 
+/* ─── Custom Sidebar Scrollbar ─── */
+.sidebar,
+#mdbook-sidebar,
+.sidebar-scrollbox,
+mdbook-sidebar-scrollbox {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(214, 158, 46, 0.45) transparent !important;
+}
+
+.sidebar::-webkit-scrollbar,
+#mdbook-sidebar::-webkit-scrollbar,
+.sidebar-scrollbox::-webkit-scrollbar,
+mdbook-sidebar-scrollbox::-webkit-scrollbar {
+  width: 6px;
+  background: transparent !important;
+}
+
+.sidebar::-webkit-scrollbar-track,
+#mdbook-sidebar::-webkit-scrollbar-track,
+.sidebar-scrollbox::-webkit-scrollbar-track,
+mdbook-sidebar-scrollbox::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+.sidebar::-webkit-scrollbar-thumb,
+#mdbook-sidebar::-webkit-scrollbar-thumb,
+.sidebar-scrollbox::-webkit-scrollbar-thumb,
+mdbook-sidebar-scrollbox::-webkit-scrollbar-thumb {
+  background: rgba(214, 158, 46, 0.45) !important;
+  border-radius: 999px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover,
+#mdbook-sidebar::-webkit-scrollbar-thumb:hover,
+.sidebar-scrollbox::-webkit-scrollbar-thumb:hover,
+mdbook-sidebar-scrollbox::-webkit-scrollbar-thumb:hover {
+  background: var(--amber) !important;
+}
+
 .sidebar-scrollbox .chapter a {
   color: rgba(255,255,255,0.8) !important;
 }
@@ -170,6 +209,24 @@ body {
 }
 
 /* ─── Nav / header bar ─── */
+#mdbook-menu-bar,
+.menu-bar {
+  background-color: var(--cream) !important;
+  border-bottom: 2px solid var(--amber) !important;
+}
+
+.menu-bar .icon-button,
+.menu-bar a,
+.menu-bar .fa-svg,
+.menu-title {
+  color: var(--navy) !important;
+}
+
+.menu-bar .icon-button:hover,
+.menu-bar a:hover {
+  color: var(--amber) !important;
+}
+
 .nav-wide-wrapper,
 .nav-wrapper {
   background: var(--white);
@@ -634,6 +691,24 @@ html.theme-dark #mdbook-content::before {
   display: none !important;
 }
 
+html.theme-dark #mdbook-menu-bar,
+html.theme-dark .menu-bar {
+  background-color: #1E293B !important;
+  border-bottom: 2px solid var(--amber) !important;
+}
+
+html.theme-dark .menu-bar .icon-button,
+html.theme-dark .menu-bar a,
+html.theme-dark .menu-bar .fa-svg,
+html.theme-dark .menu-title {
+  color: #F8FAFC !important;
+}
+
+html.theme-dark .menu-bar .icon-button:hover,
+html.theme-dark .menu-bar a:hover {
+  color: var(--amber-light) !important;
+}
+
 html.theme-dark .nav-wide-wrapper,
 html.theme-dark .nav-wrapper {
   background: #1E293B !important;
@@ -649,14 +724,6 @@ html.theme-dark .nav-chapters:hover,
 html.theme-dark .mobile-nav-chapters:hover {
   color: var(--amber-light) !important;
   background: #0F172A !important;
-}
-
-html.theme-dark .menu-bar .icon-button {
-  color: #CBD5E1 !important;
-}
-
-html.theme-dark .menu-bar .icon-button:hover {
-  color: var(--amber-light) !important;
 }
 
 html.theme-dark .menu-title {
