@@ -190,7 +190,7 @@ LIME برای متن با LIME برای داده جدولی تفاوت دارد.
 
 > <span style="color:#7C3AED">**توضیح مترجم:**</span> ستون‌ها: case = شمارهٔ نمونه (۱ همان نظر «PSY is a good guy» و ۲ همان نظر «For Christmas Song visit my channel! ;)» است)؛ label\_prob = احتمال پیش‌بینی‌شدهٔ مدل جعبه‌سیاه برای کلاس هرزنامه؛ feature = کلمه؛ feature\_weight = وزن آن کلمه در مدل خطی محلی. وزن صفر یعنی حذف آن کلمه پیش‌بینی را تغییر نمی‌دهد.
 
-## LIME برای داده‌های تصویری {#images-lime}
+## LIME برای داده‌های تصویری
 
 *این بخش توسط Verena Haunschmid نوشته شده است.*
 
