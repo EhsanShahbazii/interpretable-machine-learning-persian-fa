@@ -65,3 +65,8 @@
 - `src/chapters/images/`: junction-linked mirror for mdbook build (88 images committed)
 - `src/SUMMARY.md`: chapter listing (all chapters and appendices registered)
 - `book.toml`: mdbook config with MathJax and RTL support
+
+## Ch14 (LIME) full re-translation — branch `translation/chapter-14-lime`
+- Replaced the condensed 70-line chapter with a complete, sentence-level translation of `lime.qmd` (intro, formula, recipe, K-feature selection, tabular/text/image sections, strengths, limitations, software).
+- Added 4 local figures + in-image label notes, 3 tables, translator notes/worked examples; coverage in `.claude/ch14-lime-coverage.md`.
+- Source inconsistencies flagged in a translator note (Fig 14.3 text says bill length but image shows bill depth; penguin link points to #bike-data).
