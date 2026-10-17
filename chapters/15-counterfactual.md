@@ -204,7 +204,7 @@ $$L(\mathbf{x},\mathbf{x'},y',\mathbf{X}^{\text{obs}})=\big(o\_1(\hat{f}(\mathbf
 $$
 o\_1(\hat{f}(\mathbf{x'}), y') = 
 \begin{cases}
-0 & \text{if } \hat{f}(\mathbf{x'}) \in y' \\
+0 & \text{if } \hat{f}(\mathbf{x'}) \in y' \\\\
 \inf\limits\_{y' \in y'} \left| \hat{f}(\mathbf{x'}) - y' \right| & \text{else}
 \end{cases}
 $$
@@ -222,7 +222,7 @@ $$o\_2(\mathbf{x},\mathbf{x'})=\frac{1}{p}\sum\_{j=1}^{p}\delta\_G(x\_j, x'\_j)$
 $$
 \delta\_G(x\_j, x'\_j) = 
 \begin{cases}
-\frac{1}{\widehat{R}\_j} |x\_j - x'\_j| & \text{if } x\_j \text{ numerical} \\
+\frac{1}{\widehat{R}\_j} |x\_j - x'\_j| & \text{if } x\_j \text{ numerical} \\\\
 \mathbb{I}\_{x\_j \neq x'\_j} & \text{if } x\_j \text{ categorical}
 \end{cases}
 $$
