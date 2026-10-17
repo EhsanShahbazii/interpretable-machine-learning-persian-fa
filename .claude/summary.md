@@ -70,3 +70,9 @@
 - Replaced the condensed 70-line chapter with a complete, sentence-level translation of `lime.qmd` (intro, formula, recipe, K-feature selection, tabular/text/image sections, strengths, limitations, software).
 - Added 4 local figures + in-image label notes, 3 tables, translator notes/worked examples; coverage in `.claude/ch14-lime-coverage.md`.
 - Source inconsistencies flagged in a translator note (Fig 14.3 text says bill length but image shows bill depth; penguin link points to #bike-data).
+
+## Ch15 (Counterfactual Explanations) full re-translation — branch `translation/chapter-15-counterfactual`
+- Replaced the condensed 204-line chapter (altered formulas, dropped sentences, replaced footnote) with a sentence-level translation of `counterfactual.qmd`: intro + footnote, Peter/Anna examples, warning/tip callouts, four-plus criteria, Wachter and Dandl methods (all formulas), NSGA-II, German credit example (Tables 15.1/15.2), Strengths, Limitations, Software.
+- 2 local figures (graph.jpg, cfexp-nsgaII.jpg) with in-image label notes; translator notes + 3 worked examples (MAD, Gower, NSGA-II); coverage in `.claude/ch15-counterfactual-coverage.md`.
+- Gotcha: `\` row breaks in `cases` must be written as 4 backslashes in the .md or mdbook collapses them.
+- Next: merge/PR is left to the maintainer; no push done.
