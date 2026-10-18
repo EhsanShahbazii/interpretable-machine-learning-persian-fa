@@ -76,3 +76,9 @@
 - 2 local figures (graph.jpg, cfexp-nsgaII.jpg) with in-image label notes; translator notes + 3 worked examples (MAD, Gower, NSGA-II); coverage in `.claude/ch15-counterfactual-coverage.md`.
 - Gotcha: `\` row breaks in `cases` must be written as 4 backslashes in the .md or mdbook collapses them.
 - Next: merge/PR is left to the maintainer; no push done.
+
+## Ch16 (Anchors) full re-translation — branch `translation/chapter-16-anchors`
+- Replaced the condensed 124-line chapter (English leaks like "wisely"/"thus"/"additionally", missing strengths/limitations items, missing tip callout for class imbalance, no label translations) with a sentence-level translation of `anchors.qmd`: intro, formal definition + symbols, finding anchors (δ, coverage, final max formula), four components, complexity, tabular example, Strengths (6 items), Limitations (4), Software.
+- 4 local figures (all already in images/) with in-image label translations; translator notes + 2 worked examples; coverage in `.claude/ch16-anchors-coverage.md`.
+- The hidden R chunks in the qmd (eval: false) are not shown on the website and were not reproduced.
+- Built with `mdbook build -d <tmp>` (no book/ output committed). Merge/PR left to the maintainer; no push done.
