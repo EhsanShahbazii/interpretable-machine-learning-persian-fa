@@ -1,6 +1,15 @@
 # یادگیری ماشین قابل تفسیر — ترجمه فارسی
 
+[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+[![Read online](https://img.shields.io/badge/Read-online-blue)](https://maryammahmoudi1993.github.io/interpretable-machine-learning-persian-fa/)
+
 **Interpretable Machine Learning — Persian (Farsi) Translation**
+
+**English:** This repository hosts the Persian (Farsi) translation of
+*Interpretable Machine Learning* (3rd edition) by Christoph Molnar. The book
+covers model-agnostic and model-specific interpretation methods such as LIME,
+SHAP, PDP, ALE, counterfactuals and saliency maps. Read it online using the
+link above.
 
 ---
 
@@ -30,7 +39,8 @@
 
 کتاب اصلی تحت مجوز [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) منتشر شده است.  
 این ترجمه نیز تحت همان مجوز منتشر می‌شود.  
-تمام حقوق معنوی اثر متعلق به نویسنده اصلی، **Christoph Molnar**، است.
+تمام حقوق معنوی اثر متعلق به نویسنده اصلی، **Christoph Molnar**، است.  
+متن کامل مجوز در فایل [LICENSE](LICENSE) آمده است.
 
 ---
 
@@ -158,3 +168,38 @@ chapters/
    mdbook serve
    ```
    سپس به `http://localhost:3000` مراجعه کنید.
+
+---
+
+## مشارکت
+
+اگر اشتباه ترجمه، غلط نگارشی یا معادل بهتری برای یک اصطلاح می‌شناسید،
+یک [Issue](../../issues) باز کنید یا Pull Request بفرستید.
+راهنمای کامل در [CONTRIBUTING.md](CONTRIBUTING.md) است.
+
+## ارجاع
+
+اگر از این ترجمه استفاده می‌کنید، لطفاً هم کتاب اصلی و هم ترجمه را ذکر کنید:
+
+> Molnar, C. (2025). *Interpretable Machine Learning: A Guide for Making Black Box Models Explainable* (3rd ed.).
+> https://christophm.github.io/interpretable-ml-book/
+>
+> Mahmoudi, M. (2026). *یادگیری ماشین قابل تفسیر* (ترجمهٔ فارسی).
+> https://github.com/maryammahmoudi1993/interpretable-machine-learning-persian-fa
+
+## واژه‌نامه (نمونه)
+
+معادل‌ها مطابق واژگانی هستند که در فصل‌ها به‌کار رفته‌اند.
+
+| English | فارسی |
+|---|---|
+| Interpretability | تفسیرپذیری |
+| Black-box model | مدل جعبه‌سیاه |
+| Counterfactual explanation | توضیح خلاف واقع |
+| Shapley value | مقدار شپلی |
+| Partial dependence plot | نمودار وابستگی جزئی |
+| Permutation feature importance | اهمیت ویژگی با جایگشت |
+| Surrogate model | مدل نیابتی (مدل جایگزین) |
+| Saliency map | نقشهٔ برجستگی |
+| Prototype | پروتوتایپ (نمونهٔ اولیه) |
+| Adversarial example | نمونهٔ متخاصم (مثال خصمانه) |
