@@ -1,5 +1,25 @@
+<script>
+  (function() {
+    try {
+      var savedTheme = localStorage.getItem('iml-fa-dark-theme');
+      if (savedTheme === 'dark' || (!savedTheme && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('theme-dark');
+      }
+    } catch (e) {}
+  })();
+</script>
+
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
+  "HTML-CSS": {
+    linebreaks: { automatic: true, width: "container" }
+  },
+  SVG: {
+    linebreaks: { automatic: true, width: "container" }
+  },
+  CommonHTML: {
+    linebreaks: { automatic: true, width: "container" }
+  },
   tex2jax: {
     inlineMath: [['$', '$'], ['\\(', '\\)']],
     displayMath: [['$$', '$$'], ['\\[', '\\]']],
