@@ -17,9 +17,7 @@ src/chapters/    duplicate of chapters/ consumed by the mdbook build (src/SUMMAR
                  references files as "chapters/<file>.md", relative to src/)
 src/SUMMARY.md   mdbook table of contents
 book.toml        mdbook config (MathJax on, language "fa")
-book/            mdbook build output (generated, do not hand-edit)
-docs/            mkdocs-based site content (index.md, stylesheets) — separate from mdbook
-mkdocs.yml       mkdocs config (separate publishing path from mdbook/book.toml)
+book/            mdbook build output (generated, git-ignored, rebuilt by CI; do not hand-edit)
 scripts/         one-off Python maintenance scripts (math-escaping fixes, index-link fixes)
 Paper/, code/    supplementary/non-chapter material
 ```
@@ -175,8 +173,8 @@ of a documentation task.
 
 - `chapters/` vs `src/chapters/`: always diff both before assuming a chapter is fully fixed;
   at least one prior session (ch07) edited only `src/chapters/`, leaving `chapters/` stale.
-- The book has two separate publishing pipelines (`mdbook` via `book.toml`/`src/`, and
-  `mkdocs` via `mkdocs.yml`/`docs/`) — `docs/` is a lightweight landing page, not a mirror of
-  the chapters; don't assume changes to `chapters/` need mirroring into `docs/`.
+- mdBook (`book.toml`, `src/`) is the only build/publish system; `.github/workflows/deploy.yml` builds
+  it on every push to `main` and deploys `./book` to GitHub Pages. MkDocs and the old second workflow
+  were removed; `book/` is git-ignored, so use `mdbook build -d <tmp>` to preview.
 - Appendix D is the single source of truth for references; avoid re-introducing per-chapter
   bibliographies.
