@@ -193,8 +193,8 @@ $$\phi\_j(\hat{f})=\beta\_{j}x\_j-\beta\_{j}\mathbb{E}[X\_{j}]$$
 
 $$
 \begin{aligned}
-\sum\_{j=1}^{p}\phi\_j(\hat{f})=&\sum\_{j=1}^p(\beta\_{j}x\_j- \beta\_{j} \mathbb{E}[X\_{j}]) \\\
-=&(\beta\_0+\sum\_{j=1}^p\beta\_{j}x\_j)-(\beta\_0+\sum\_{j=1}^p \beta\_{j} \mathbb{E}[X\_{j}]) \\\
+\sum\_{j=1}^{p}\phi\_j(\hat{f})=&\sum\_{j=1}^p(\beta\_{j}x\_j- \beta\_{j} \mathbb{E}[X\_{j}]) \\\\
+=&(\beta\_0+\sum\_{j=1}^p\beta\_{j}x\_j)-(\beta\_0+\sum\_{j=1}^p \beta\_{j} \mathbb{E}[X\_{j}]) \\\\
 =&\hat{f}(\mathbf{x})-\mathbb{E}[\hat{f}(\mathbf{X})]
 \end{aligned}
 $$
