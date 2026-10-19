@@ -82,3 +82,9 @@
 - 4 local figures (all already in images/) with in-image label translations; translator notes + 2 worked examples; coverage in `.claude/ch16-anchors-coverage.md`.
 - The hidden R chunks in the qmd (eval: false) are not shown on the website and were not reproduced.
 - Built with `mdbook build -d <tmp>` (no book/ output committed). Merge/PR left to the maintainer; no push done.
+
+## Ch17 (Shapley Values) full re-translation — branch `translation/chapter-17-shapley`
+- Replaced the condensed chapter with a sentence-level translation of `shapley.qmd`: intro + SHAP-book callout, General idea (3 figures with in-image label notes), Examples (penguins x2, bike), Theory (linear derivation, Definition, 4 axioms), Estimating (Monte-Carlo algorithm; now an h2 as in the source), Strengths, Limitations (6 items), Software.
+- Translator notes flag source slips: "-0.31 below" double negative and "(0.51)" for the difference; bike text says 422 "below" while Fig 17.6 shows +422; season=FALL larger than hum in Fig 17.6.
+- Worked examples: Shapley weights (3 players), linear contribution, one Monte-Carlo iteration, contrastive reference; coverage in `.claude/ch17-shapley-coverage.md`.
+- Gotcha: `scripts/fix-math-all-chapters.py` turns `\` into 3 backslashes; mdBook needs 4 at row ends (fixed manually).
