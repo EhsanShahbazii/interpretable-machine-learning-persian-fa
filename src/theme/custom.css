@@ -1,6 +1,58 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap");
+/* ─── Self-Hosted Local Fonts (برای دسترسی بدون فیلتر در ایران) ─── */
+@font-face {
+  font-family: 'Vazirmatn';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/Vazirmatn-Regular.woff2') format('woff2'),
+       url('../theme/fonts/Vazirmatn-Regular.woff2') format('woff2'),
+       url('../../theme/fonts/Vazirmatn-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Vazirmatn';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/Vazirmatn-Bold.woff2') format('woff2'),
+       url('../theme/fonts/Vazirmatn-Bold.woff2') format('woff2'),
+       url('../../theme/fonts/Vazirmatn-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/Inter-Regular.woff2') format('woff2'),
+       url('../theme/fonts/Inter-Regular.woff2') format('woff2'),
+       url('../../theme/fonts/Inter-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/Inter-Bold.woff2') format('woff2'),
+       url('../theme/fonts/Inter-Bold.woff2') format('woff2'),
+       url('../../theme/fonts/Inter-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/JetBrainsMono-Regular.woff2') format('woff2'),
+       url('../theme/fonts/JetBrainsMono-Regular.woff2') format('woff2'),
+       url('../../theme/fonts/JetBrainsMono-Regular.woff2') format('woff2');
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap");
 
 :root {
+  
   --navy: #1A365D;
   --navy-light: #2B6CB0;
   --navy-dark: #0F2440;
@@ -15,6 +67,8 @@
   --shadow: 0 1px 3px rgba(0,0,0,0.08);
   --line-color: rgba(180, 200, 220, 0.4);
   --margin-line: rgba(200, 100, 100, 0.3);
+  --font-persian: "Vazirmatn", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-code: "JetBrains Mono", "Fira Code", "Cascadia Code", "Consolas", monospace;
 }
 
 html {
@@ -24,20 +78,28 @@ html {
 body {
   background-color: var(--cream);
   color: var(--text-dark);
-  font-family: "Noto Naskh Arabic", serif;
+  font-family: var(--font-persian);
+  font-feature-settings: "ss01";
 }
 
 .content {
-  font-family: "Noto Naskh Arabic", serif;
+  font-family: var(--font-persian);
 }
 
-.content * {
-  font-family: "Noto Naskh Arabic", serif;
+.content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
+  font-family: var(--font-persian);
 }
 
 .content code, .content pre, .content tt {
-  font-family: "Cascadia Code", "Fira Code", "Consolas", monospace !important;
+  font-family: var(--font-code) !important;
 }
+
+.content :not(pre) > code {
+  direction: ltr;
+  display: inline-block;
+  unicode-bidi: isolate;
+}
+
 
 /* ─── Sidebar ─── */
 #mdbook-sidebar {
@@ -65,8 +127,81 @@ body {
   background: rgba(255,255,255,0.1) !important;
 }
 
+/* ─── Dynamic Sidebar Scrollspy & Subsection Highlighting ─── */
+#mdbook-sidebar .on-this-page {
+  padding-right: 6px;
+  margin: 6px 0;
+  border-right: 1px dashed rgba(214, 158, 46, 0.3);
+}
+
+#mdbook-sidebar .on-this-page a {
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-size: 13.5px !important;
+  line-height: 1.6 !important;
+  padding: 4px 10px !important;
+  border-radius: 4px !important;
+  display: block;
+  border-right: 3px solid transparent !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+#mdbook-sidebar .on-this-page a:hover {
+  color: var(--white) !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+#mdbook-sidebar .on-this-page a.current-header {
+  color: var(--amber-light) !important;
+  background: rgba(214, 158, 46, 0.25) !important;
+  font-weight: 600 !important;
+  border-right: 3px solid var(--amber) !important;
+  border-radius: 4px 0 0 4px !important;
+  padding-right: 12px !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+
 .sidebar-scrollbox {
   background: var(--navy) !important;
+}
+
+/* ─── Custom Sidebar Scrollbar ─── */
+.sidebar,
+#mdbook-sidebar,
+.sidebar-scrollbox,
+mdbook-sidebar-scrollbox {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(214, 158, 46, 0.45) transparent !important;
+}
+
+.sidebar::-webkit-scrollbar,
+#mdbook-sidebar::-webkit-scrollbar,
+.sidebar-scrollbox::-webkit-scrollbar,
+mdbook-sidebar-scrollbox::-webkit-scrollbar {
+  width: 6px;
+  background: transparent !important;
+}
+
+.sidebar::-webkit-scrollbar-track,
+#mdbook-sidebar::-webkit-scrollbar-track,
+.sidebar-scrollbox::-webkit-scrollbar-track,
+mdbook-sidebar-scrollbox::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+.sidebar::-webkit-scrollbar-thumb,
+#mdbook-sidebar::-webkit-scrollbar-thumb,
+.sidebar-scrollbox::-webkit-scrollbar-thumb,
+mdbook-sidebar-scrollbox::-webkit-scrollbar-thumb {
+  background: rgba(214, 158, 46, 0.45) !important;
+  border-radius: 999px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover,
+#mdbook-sidebar::-webkit-scrollbar-thumb:hover,
+.sidebar-scrollbox::-webkit-scrollbar-thumb:hover,
+mdbook-sidebar-scrollbox::-webkit-scrollbar-thumb:hover {
+  background: var(--amber) !important;
 }
 
 .sidebar-scrollbox .chapter a {
@@ -125,6 +260,24 @@ body {
 }
 
 /* ─── Nav / header bar ─── */
+#mdbook-menu-bar,
+.menu-bar {
+  background-color: var(--cream) !important;
+  border-bottom: 2px solid var(--amber) !important;
+}
+
+.menu-bar .icon-button,
+.menu-bar a,
+.menu-bar .fa-svg,
+.menu-title {
+  color: var(--navy) !important;
+}
+
+.menu-bar .icon-button:hover,
+.menu-bar a:hover {
+  color: var(--amber) !important;
+}
+
 .nav-wide-wrapper,
 .nav-wrapper {
   background: var(--white);
@@ -183,6 +336,21 @@ body {
   background: transparent !important;
 }
 
+/* 980px removed to preserve original notebook margin layout */
+
+/* ─── MathJax & Layout Overflow Prevention ─── */
+.MathJax_Display {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  max-width: 100% !important;
+  padding: 4px 0 !important;
+}
+
+.MathJax {
+  max-width: 100%;
+}
+
+
 /* ─── Typography ─── */
 .content h1 {
   color: var(--navy);
@@ -238,9 +406,10 @@ body {
 .content blockquote {
   background: var(--cream);
   border-right: 4px solid var(--amber);
-  padding: 12px 16px;
+  padding: 14px 20px;
   margin: 16px 0;
   border-radius: 0 6px 6px 0;
+  overflow-x: auto;
 }
 
 /* ─── Translator-added content (توضیح مترجم / برای درک بهتر) ───
@@ -547,3 +716,167 @@ footer {
 footer a {
   color: var(--navy-light);
 }
+
+/* ─── Night Reading Theme (حالت مطالعه شب) ─── */
+html.theme-dark,
+html.theme-dark body {
+  background-color: #0F172A !important;
+  color: #F1F5F9 !important;
+}
+
+html.theme-dark .page {
+  background: #0F172A !important;
+}
+
+html.theme-dark #mdbook-content {
+  background: #1E293B !important;
+  background-image: none !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.45) !important;
+  border: 1px solid #334155 !important;
+}
+
+html.theme-dark #mdbook-content::before {
+  display: none !important;
+}
+
+html.theme-dark #mdbook-menu-bar,
+html.theme-dark .menu-bar {
+  background-color: #1E293B !important;
+  border-bottom: 2px solid var(--amber) !important;
+}
+
+html.theme-dark .menu-bar .icon-button,
+html.theme-dark .menu-bar a,
+html.theme-dark .menu-bar .fa-svg,
+html.theme-dark .menu-title {
+  color: #F8FAFC !important;
+}
+
+html.theme-dark .menu-bar .icon-button:hover,
+html.theme-dark .menu-bar a:hover {
+  color: var(--amber-light) !important;
+}
+
+html.theme-dark .nav-wide-wrapper,
+html.theme-dark .nav-wrapper {
+  background: #1E293B !important;
+  border-bottom: 2px solid var(--amber) !important;
+}
+
+html.theme-dark .nav-chapters,
+html.theme-dark .mobile-nav-chapters {
+  color: #F8FAFC !important;
+}
+
+html.theme-dark .nav-chapters:hover,
+html.theme-dark .mobile-nav-chapters:hover {
+  color: var(--amber-light) !important;
+  background: #0F172A !important;
+}
+
+html.theme-dark .menu-title {
+  color: #F8FAFC !important;
+}
+
+html.theme-dark .content h1,
+html.theme-dark .content h2,
+html.theme-dark .content h3,
+html.theme-dark .content h4,
+html.theme-dark .content h5,
+html.theme-dark .content h6 {
+  color: #F8FAFC !important;
+  border-color: var(--amber) !important;
+}
+
+html.theme-dark .content p,
+html.theme-dark .content li,
+html.theme-dark .content td,
+html.theme-dark .content th {
+  color: #F1F5F9 !important;
+}
+
+html.theme-dark .content a {
+  color: #60A5FA !important;
+}
+
+html.theme-dark .content a:hover {
+  color: var(--amber-light) !important;
+}
+
+html.theme-dark .content table th {
+  background: #0F172A !important;
+  color: #F8FAFC !important;
+}
+
+html.theme-dark .content table td,
+html.theme-dark .content table th {
+  border-color: #334155 !important;
+}
+
+html.theme-dark .content table tr:nth-child(even) {
+  background: #162032 !important;
+}
+
+html.theme-dark .content blockquote {
+  background: #162032 !important;
+  border-right-color: var(--amber) !important;
+  color: #CBD5E1 !important;
+}
+
+html.theme-dark .content blockquote.translator-note {
+  background: #2E1065 !important;
+  border-right-color: #A855F7 !important;
+  color: #E9D5FF !important;
+}
+
+html.theme-dark .content blockquote.translator-note strong {
+  color: #F3E8FF !important;
+}
+
+html.theme-dark .content code,
+html.theme-dark .content pre,
+html.theme-dark .content tt {
+  background: #0B1120 !important;
+  color: #38BDF8 !important;
+  border-color: #334155 !important;
+}
+
+html.theme-dark .MathJax,
+html.theme-dark .MathJax_Display,
+html.theme-dark .MathJax span {
+  color: #F1F5F9 !important;
+}
+
+html.theme-dark #mdbook-sidebar {
+  background-color: #0B1120 !important;
+}
+
+html.theme-dark .sidebar-scrollbox {
+  background: #0B1120 !important;
+}
+
+html.theme-dark .cover-toc {
+  background: #1E293B !important;
+  border: 1px solid #334155 !important;
+}
+
+html.theme-dark .metadata-table td {
+  background: #1E293B !important;
+  border-color: #334155 !important;
+  color: #F1F5F9 !important;
+}
+
+html.theme-dark .metadata-table tr:nth-child(even) td {
+  background: #162032 !important;
+}
+
+html.theme-dark footer {
+  border-top-color: #334155 !important;
+  color: #94A3B8 !important;
+}
+
+/* Hide confusing default mdbook theme list popup */
+#mdbook-theme-list {
+  display: none !important;
+}
+

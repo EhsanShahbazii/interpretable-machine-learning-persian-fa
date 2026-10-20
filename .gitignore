@@ -9,3 +9,4 @@ book/
 # Editor-local settings
 .vscode/
 ch_md_files.txt
+.DS_Store
