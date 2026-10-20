@@ -88,3 +88,9 @@
 - Translator notes flag source slips: "-0.31 below" double negative and "(0.51)" for the difference; bike text says 422 "below" while Fig 17.6 shows +422; season=FALL larger than hum in Fig 17.6.
 - Worked examples: Shapley weights (3 players), linear contribution, one Monte-Carlo iteration, contrastive reference; coverage in `.claude/ch17-shapley-coverage.md`.
 - Gotcha: `scripts/fix-math-all-chapters.py` turns `\` into 3 backslashes; mdBook needs 4 at row ends (fixed manually).
+
+## Ch18 (SHAP) full re-translation — branch `translation/chapter-18-shap`
+- Replaced the condensed chapter (changed notation, rewritten permutation formulas, wrong cheat-sheet link, no label translations) with a sentence-level translation of `shap.qmd`: intro/history, SHAP theory (3 properties), KernelSHAP (5 steps, kernel, loss), TreeSHAP, Permutation Method, Example, aggregation plots (importance, summary, dependence, interaction, clustering), Strengths, Limitations, Software.
+- Added the two original force-plot images (`shap-explain-1/2.jpg`, replacing the combined `fig-force-plots-1.png`, now unreferenced); all 8 figures have in-image label notes; coverage in `.claude/ch18-shap-coverage.md`.
+- Translator notes flag source mismatches: Fig 18.3 baseline 0.47 vs ~0.51 in image and text vs bar sizes; P(female) vs P(Adelie) target; Fig 18.7 caption (bill length) vs image (body mass coloured by bill depth).
+- Gotcha: `\{`/`\}` in math get eaten by mdBook's markdown; use `\lbrace `/`\rbrace ` instead.
