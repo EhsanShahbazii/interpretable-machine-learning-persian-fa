@@ -532,3 +532,13 @@ TreeSHAP تابع ارزش را با تکیه بر پیش‌بینی مورد ا
 
 > <span style="color:#7C3AED">**توضیح مترجم:**</span> جملهٔ طعنه‌آمیز نویسنده («دانشمند دادهٔ شرور») حفظ شد. منظور این است که توضیح SHAP را می‌توان طوری ساخت (مثلاً با دست‌کاری مدل یا داده‌های پس‌زمینه) که ویژگی‌های حساس مثل جنسیت یا نژاد در توضیح کم‌اهمیت جلوه کنند، در حالی که مدل واقعاً از آن‌ها استفاده می‌کند؛ این را Slack و همکاران (۲۰۲۰) نشان دادند.
 
+## نرم‌افزار
+
+Lundberg، SHAP را در بستهٔ پایتون [shap](https://github.com/slundberg/shap) پیاده‌سازی کرد که اکنون تیمی بسیار بزرگ‌تر آن را نگهداری می‌کند.
+
+این پیاده‌سازی برای مدل‌هایی کار می‌کند که با کتابخانهٔ یادگیری ماشین [scikit-learn](https://scikit-learn.org/stable/) برای پایتون آموزش داده شده‌اند.
+بستهٔ shap برای مثال‌های این فصل هم استفاده شد.
+SHAP در چارچوب‌های تقویت درخت [xgboost](https://github.com/dmlc/xgboost/tree/master/python-package) و [LightGBM](https://github.com/microsoft/LightGBM) ادغام شده است، و آن را در [PiML](https://selfexplainml.github.io/PiML-Toolbox/_build/html/index.html)، یک کتابخانهٔ تفسیرپذیری عمومی‌تر، نیز می‌یابید.
+در R بسته‌های [shapper](https://modeloriented.github.io/shapper/) و [fastshap](https://github.com/bgreenwell/fastshap) وجود دارند.
+SHAP در بستهٔ R با نام [xgboost](https://rdrr.io/cran/xgboost/man/xgb.plot.shap.html) نیز گنجانده شده است.
+به‌طور ویژه برای برهم‌کنش‌های SHAP، بستهٔ پایتون [shapiq](https://github.com/mmschlk/shapiq) وجود دارد.
